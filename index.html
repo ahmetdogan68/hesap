@@ -100,7 +100,7 @@ td{padding:4px;border:1px solid #ccc;white-space:nowrap}
 </div>
 
 <script>
-// --- FİYAT LİSTESİ GÖMÜLÜ ---
+// GÖMÜLÜ LİSTE - İnternet gerekmez
 let fiyatlar = [
   { "urun": "15x15x1,20 HR KARE PROFİL", "fiyatTL": 38.87, "fiyatUSD": 0.83 },
   { "urun": "15x15x1,50 HR KARE PROFİL", "fiyatTL": 46.75, "fiyatUSD": 1.0 },
@@ -113,7 +113,6 @@ let fiyatlar = [
   { "urun": "25x25x2,50 HR KARE PROFİL", "fiyatTL": 102.36, "fiyatUSD": 2.18 },
   { "urun": "25x25x3,00 HR KARE PROFİL", "fiyatTL": 121.07, "fiyatUSD": 2.58 },
   { "urun": "40x60x2.00 mm DİKDÖRTGEN PROFİL", "fiyatTL": 164.18, "fiyatUSD": 3.50 }
-  // BURAYA fiyat.json'UN TAMAMINI YAPIŞTIR
 ];
 
 let sel=document.getElementById('urunSelect');
@@ -126,7 +125,6 @@ fiyatlar.forEach((p,i)=>{
 });
 
 function canliGuncelle(){
-  if(!fiyatlar.length) return;
   let idx=sel.value;
   let urun=fiyatlar[idx];
   let para=document.getElementById('paraSelect').value;
@@ -139,7 +137,6 @@ function canliGuncelle(){
   let tutar=birimFiyat*toplamMetre;
   let iskontolu=tutar*(1-isk/100);
   let toplam=iskontolu*(1+kdv/100);
-
   document.getElementById('hMetre').textContent=toplamMetre+' m';
   document.getElementById('hBirim').textContent=birimFiyat.toFixed(2)+' '+para;
   document.getElementById('hIskonto').textContent='%'+isk;
@@ -199,7 +196,6 @@ document.getElementById('logoInput').addEventListener('change',e=>{
 });
 
 function tabloyaEkle(){
- if(!fiyatlar.length) return alert('Fiyatlar yüklenmedi');
  let idx=document.getElementById('urunSelect').value;
  let urun=fiyatlar[idx];
  let marka=document.getElementById('markaSelect').value;
@@ -217,22 +213,7 @@ function tabloyaEkle(){
  let netBirim=birimFiyat*(1-isk/100);
 
  let tr=document.createElement('tr');
- tr.innerHTML=`
- <td>${urun.urun}</td>
- <td>${marka} 2025</td>
- <td>${para}</td>
- <td>${miktar}</td>
- <td>${tip==='adet'?'Adet':'Metre'}</td>
- <td>${toplamMetre}</td>
- <td>Metre</td>
- <td>${birimFiyat.toFixed(2)}</td>
- <td>${isk.toFixed(2)}</td>
- <td>${netBirim.toFixed(2)}</td>
- <td>${kdv.toFixed(2)}</td>
- <td>${tutar.toFixed(2)}</td>
- <td>${kdvT.toFixed(2)}</td>
- <td data-toplam="${toplam}">${toplam.toFixed(2)}</td>
- <td><button onclick="this.parentElement.parentElement.remove();toplamHesapla()" style="background:#f44336;padding:4px 8px">X</button></td>`;
+ tr.innerHTML=`<td>${urun.urun}</td><td>${marka} 2025</td><td>${para}</td><td>${miktar}</td><td>${tip==='adet'?'Adet':'Metre'}</td><td>${toplamMetre}</td><td>Metre</td><td>${birimFiyat.toFixed(2)}</td><td>${isk.toFixed(2)}</td><td>${netBirim.toFixed(2)}</td><td>${kdv.toFixed(2)}</td><td>${tutar.toFixed(2)}</td><td>${kdvT.toFixed(2)}</td><td data-toplam="${toplam}">${toplam.toFixed(2)}</td><td><button onclick="this.parentElement.parentElement.remove();toplamHesapla()" style="background:#f44336;padding:4px 8px">X</button></td>`;
  document.getElementById('tabloBody').appendChild(tr);
  document.getElementById('paraBirimiGoster').textContent=para;
  toplamHesapla();
