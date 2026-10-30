@@ -17,9 +17,14 @@ td{padding:4px;border:1px solid #ccc;white-space:nowrap}
 #ayarModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;justify-content:center;align-items:center}
 .modalBox{background:#fff;padding:15px;width:92%;max-width:600px;border-radius:10px;max-height:92vh;overflow-y:auto}
 .logo{max-height:45px}
-.urun-row{display:flex;gap:8px;align-items:end;flex-wrap:nowrap;overflow-x:auto}
-.urun-row > div{flex:1;min-width:90px}
-.urun-row > div:first-child{flex:2;min-width:180px}
+.urun-row{display:flex;gap:6px;align-items:end}
+.urun-row > div{flex:1}
+.urun-row .w-small{flex:0 0 110px}
+.urun-row .w-medium{flex:0 0 140px}
+.urun-row .w-big{flex:2}
+.hesap-kutu{display:flex;gap:10px;background:#e3f2fd;padding:10px;border-radius:6px;margin-top:10px;flex-wrap:wrap}
+.hesap-kutu div{flex:1;min-width:100px;text-align:center}
+.hesap-kutu b{font-size:16px;color:#0d47a1}
 </style>
 </head>
 <body>
@@ -64,14 +69,22 @@ td{padding:4px;border:1px solid #ccc;white-space:nowrap}
 <div class="card">
 <h3 style="margin:0 0 8px">Ürün Ekle</h3>
 <div class="urun-row" id="formRow">
-<div><label>Ürün Seç</label><select id="urunSelect"><option>Yükleniyor...</option></select></div>
-<div><label>Marka</label><select id="markaSelect"><option value="YÜCEL">YÜCEL</option><option value="TOSÇELİK">TOSÇELİK</option></select></div>
-<div><label>Para Birimi</label><select id="paraSelect"><option value="TL" selected>TL</option><option value="USD">$</option></select></div>
-<div><label>Evrak Birim</label><select id="tipSelect"><option value="adet">Adet</option><option value="metre">Metre</option></select></div>
-<div><label>Miktar</label><input type="number" id="miktar" value="1"></div>
-<div><label>İskonto (%)</label><input type="number" id="iskonto" value="0"></div>
-<div><label>KDV (%)</label><input type="number" id="kdv" value="20"></div>
+<div class="w-big"><label>Ürün Seç</label><select id="urunSelect"></select></div>
+<div class="w-small"><label>Marka</label><select id="markaSelect"><option value="YÜCEL">YÜCEL</option><option value="TOSÇELİK">TOSÇELİK</option></select></div>
+<div class="w-small"><label>Para Birimi</label><select id="paraSelect"><option value="TL" selected>TL</option><option value="USD">$</option></select></div>
+<div class="w-small"><label>Evrak Birim</label><select id="tipSelect"><option value="adet">Adet</option><option value="metre">Metre</option></select></div>
+<div class="w-small"><label>Miktar</label><input type="number" id="miktar" value="1"></div>
+<div class="w-small"><label>İskonto (%)</label><input type="number" id="iskonto" value="0"></div>
+<div class="w-small"><label>KDV (%)</label><input type="number" id="kdv" value="20"></div>
 <div style="flex:0 0 auto"><button onclick="tabloyaEkle()" id="ekleBtn">+ Ekle</button></div>
+</div>
+
+<div class="hesap-kutu" id="canliHesap">
+<div>Metre Karşılığı<br><b id="hMetre">6 m</b></div>
+<div>Birim Fiyat<br><b id="hBirim">-</b></div>
+<div>İskonto<br><b id="hIskonto">%0</b></div>
+<div>İskontolu Fiyat<br><b id="hIskontolu">-</b></div>
+<div>Toplam (KDV Dahil)<br><b id="hToplam">-</b></div>
 </div>
 </div>
 
@@ -88,38 +101,69 @@ td{padding:4px;border:1px solid #ccc;white-space:nowrap}
 </div>
 
 <script>
-let fiyatlar=[];
+// --- FİYAT LİSTESİ GÖMÜLÜ ---
+let fiyatlar = [
+  { "urun": "15x15x1,20 HR KARE PROFİL", "fiyatTL": 38.87, "fiyatUSD": 0.83 },
+  { "urun": "15x15x1,50 HR KARE PROFİL", "fiyatTL": 46.75, "fiyatUSD": 1.0 },
+  { "urun": "16x16x1,50 HR KARE PROFİL", "fiyatTL": 53.65, "fiyatUSD": 1.15 },
+  { "urun": "15x30x1,50 HR KARE PROFİL", "fiyatTL": 67.15, "fiyatUSD": 1.43 },
+  { "urun": "25x25x1,20 HR KARE PROFİL", "fiyatTL": 60.91, "fiyatUSD": 1.3 },
+  { "urun": "25x25x1,40 HR KARE PROFİL", "fiyatTL": 64.71, "fiyatUSD": 1.38 },
+  { "urun": "25x25x1,50 HR KARE PROFİL", "fiyatTL": 67.39, "fiyatUSD": 1.44 },
+  { "urun": "25x25x1,90 HR KARE PROFİL", "fiyatTL": 79.54, "fiyatUSD": 1.7 },
+  { "urun": "25x25x2,50 HR KARE PROFİL", "fiyatTL": 102.36, "fiyatUSD": 2.18 },
+  { "urun": "25x25x3,00 HR KARE PROFİL", "fiyatTL": 121.07, "fiyatUSD": 2.58 }
+  // BURAYA SENİN fiyat.json'UN TAMAMINI YAPIŞTIR (272 satır)
+];
 
-// Önce github.io dene, olmazsa raw dene
-async function fiyatlariYukle(){
-  const urls=[
-    'https://ahmetdogan68.github.io/hesap/fiyat.json',
-    'https://raw.githubusercontent.com/ahmetdogan68/hesap/refs/heads/main/fiyat.json'
-  ];
-  for(let url of urls){
-    try{
-      const r=await fetch(url);
-      if(r.ok){
-        const data=await r.json();
-        fiyatlar=data;
-        doldur();
-        return;
-      }
-    }catch(e){}
+let sel=document.getElementById('urunSelect');
+sel.innerHTML='';
+fiyatlar.forEach((p,i)=>{
+  let o=document.createElement('option');
+  o.value=i;
+  o.textContent=p.urun;
+  sel.appendChild(o);
+});
+
+// Canlı hesap güncelle
+function canliGuncelle(){
+  if(!fiyatlar.length) return;
+  let idx=sel.value;
+  let urun=fiyatlar[idx];
+  let para=document.getElementById('paraSelect').value;
+  let tip=document.getElementById('tipSelect').value;
+  let miktar=parseFloat(document.getElementById('miktar').value)||0;
+  let isk=parseFloat(document.getElementById('iskonto').value)||0;
+  let kdv=parseFloat(document.getElementById('kdv').value)||20;
+  let birimFiyat=para==='TL'?urun.fiyatTL:urun.fiyatUSD;
+  let toplamMetre=tip==='adet'?miktar*6:miktar;
+  let tutar=birimFiyat*toplamMetre;
+  let iskontolu=tutar*(1-isk/100);
+  let toplam=iskontolu*(1+kdv/100);
+
+  document.getElementById('hMetre').textContent=toplamMetre+' m';
+  document.getElementById('hBirim').textContent=birimFiyat.toFixed(2)+' '+para;
+  document.getElementById('hIskonto').textContent='%'+isk;
+  document.getElementById('hIskontolu').textContent=iskontolu.toFixed(2)+' '+para;
+  document.getElementById('hToplam').textContent=toplam.toFixed(2)+' '+para;
+}
+document.getElementById('formRow').addEventListener('input', canliGuncelle);
+document.getElementById('formRow').addEventListener('change', canliGuncelle);
+canliGuncelle();
+
+// Enter ile sonraki alana geç
+document.getElementById('formRow').addEventListener('keydown', e=>{
+  if(e.key === 'Enter'){
+    e.preventDefault();
+    const inputs = Array.from(document.querySelectorAll('#formRow select, #formRow input, #formRow button'));
+    const idx = inputs.indexOf(document.activeElement);
+    if(idx > -1 && idx < inputs.length - 1){
+      inputs[idx+1].focus();
+    } else if(document.activeElement.id === 'ekleBtn'){
+      tabloyaEkle();
+    }
   }
-  document.getElementById('urunSelect').innerHTML='<option>Fiyat.json yüklenemedi</option>';
-}
-function doldur(){
-  let sel=document.getElementById('urunSelect');
-  sel.innerHTML='';
-  fiyatlar.forEach((p,i)=>{
-    let o=document.createElement('option');
-    o.value=i;
-    o.textContent=p.urun;
-    sel.appendChild(o);
-  });
-}
-fiyatlariYukle();
+});
 
 // TCMB Kuru
 async function tcmbKurAl(){
@@ -134,21 +178,6 @@ async function tcmbKurAl(){
   }
 }
 tcmbKurAl();
-
-// Enter ile sonraki alana geç
-document.getElementById('formRow').addEventListener('keydown', e=>{
-  if(e.key === 'Enter'){
-    e.preventDefault();
-    const inputs = Array.from(document.querySelectorAll('#formRow select, #formRow input, #formRow button'));
-    const idx = inputs.indexOf(document.activeElement);
-    if(idx > -1 && idx < inputs.length - 1){
-      inputs[idx+1].focus();
-      if(inputs[idx+1].tagName === 'SELECT') inputs[idx+1].click();
-    } else if(document.activeElement.id === 'ekleBtn'){
-      tabloyaEkle();
-    }
-  }
-});
 
 function saveSettings(){
  let a={unvan:document.getElementById('firmaUnvan').value,adres:document.getElementById('adres').value,tel:document.getElementById('telefon').value,mail:document.getElementById('mail').value,web:document.getElementById('web').value,banka:document.getElementById('banka').value,doviz:document.getElementById('doviz').value};
