@@ -2,57 +2,155 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fiyat Teklif</title>
 <style>
-body{font-family:Arial;padding:15px;background:#f5f5f5}
-.card{background:#fff;padding:15px;border-radius:8px;margin-bottom:15px}
-label{display:block;margin:8px 0 4px;font-weight:bold}
+body{font-family:Arial,sans-serif;margin:0;background:#f5f5f5;padding:15px}
+.card{background:#fff;padding:15px;border-radius:8px;margin-bottom:15px;box-shadow:0 2px 5px rgba(0,0,0,.1)}
+label{display:block;margin:8px 0 4px;font-weight:bold;font-size:13px}
 input,select{width:100%;padding:10px;border:1px solid #ccc;border-radius:5px;box-sizing:border-box}
-button{width:100%;padding:12px;background:#1976d2;color:#fff;border:0;border-radius:5px;margin-top:10px}
+button{padding:10px 15px;background:#1976d2;color:#fff;border:0;border-radius:5px;font-weight:bold;cursor:pointer}
+table{width:100%;border-collapse:collapse;font-size:12px;display:block;overflow-x:auto}
+th{background:#b3d9ff;padding:6px;border:1px solid #999;white-space:nowrap}
+td{padding:5px;border:1px solid #ccc;white-space:nowrap}
+#ayarIkon{position:fixed;top:15px;right:15px;background:#333;color:#fff;width:45px;height:45px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;z-index:999}
+#ayarModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;justify-content:center;align-items:center}
+.modalBox{background:#fff;padding:20px;width:90%;max-width:500px;border-radius:10px;max-height:90vh;overflow-y:auto}
+.logo{max-height:50px}
 </style>
 </head>
 <body>
-<div class="card">
-<h2>Fiyat Teklif</h2>
-<label>Müşteri Ünvanı</label><input id="musteriUnvan" placeholder="Buraya yaz">
-<label>İletişim Bilgileri</label><input id="musteriTel" placeholder="Telefon, Mail">
+
+<div id="ayarIkon" onclick="document.getElementById('ayarModal').style.display='flex'">⚙️</div>
+
+<div id="ayarModal">
+<div class="modalBox">
+<h3>Ayarlar</h3>
+<label>Firma Ünvanı</label><input id="firmaUnvan" value="YÜCEL">
+<label>Adres</label><input id="adres">
+<label>Telefon</label><input id="telefon">
+<label>Mail</label><input id="mail">
+<label>Web</label><input id="web">
+<label>Banka Hesap</label><input id="banka">
+<label>Logo</label><input type="file" id="logoInput" accept="image/*">
+<img id="logoPreview" class="logo" style="display:none;margin-top:10px">
+<label>Döviz Kuru</label><input type="number" id="doviz" value="47" step="0.01">
+<button onclick="saveSettings()" style="width:100%;margin-top:10px">Kaydet</button>
+<button onclick="document.getElementById('ayarModal').style.display='none'" style="width:100%;background:#888;margin-top:5px">Kapat</button>
+</div>
 </div>
 
 <div class="card">
+<img id="logoTop" class="logo" style="display:none">
+<h2 id="firmaBaslik">FİYAT TEKLİFİ</h2>
+<p id="firmaBilgi"></p>
+<hr>
+<label>Müşteri Ünvanı</label><input id="musteriUnvan" placeholder="Müşteri adı">
+<label>İletişim Bilgileri</label><input id="musteriTel" placeholder="Telefon, Mail, Adres">
+</div>
+
+<div class="card">
+<h3>Ürün Ekle</h3>
 <label>Ürün Seç</label>
 <select id="urunSelect"><option>Yükleniyor...</option></select>
 
 <label>Marka</label>
-<select id="markaSelect"><option>YÜCEL</option><option>TOSÇELİK</option></select>
+<select id="markaSelect"><option value="YÜCEL">YÜCEL</option><option value="TOSÇELİK">TOSÇELİK</option></select>
 
 <label>Para Birimi</label>
-<select id="paraSelect"><option>TL</option><option>USD</option></select>
+<select id="paraSelect"><option value="TL" selected>TL</option><option value="USD">$</option></select>
 
 <label>Evrak Birim</label>
-<select id="tipSelect"><option>Adet</option><option>Metre</option></select>
+<select id="tipSelect"><option value="adet">Adet</option><option value="metre">Metre</option></select>
 
 <label>Miktar</label><input type="number" id="miktar" value="1">
 <label>İskonto (%)</label><input type="number" id="iskonto" value="0">
 <label>KDV (%)</label><input type="number" id="kdv" value="20">
+<button onclick="tabloyaEkle()" style="width:100%;margin-top:10px">+ Tabloya Ekle</button>
+</div>
 
-<button onclick="hesapla()">Hesapla</button>
-<div id="sonuc" style="margin-top:15px;font-weight:bold"></div>
+<div class="card">
+<h3>Teklif Listesi</h3>
+<table>
+<thead><tr>
+<th>Mal Adı</th><th>Evrak Miktar</th><th>Evrak Birim</th><th>Miktar</th><th>Birim</th><th>Fiyat Şablonu</th><th>Liste Açıklaması</th><th>Kalem İskonto Oranı</th><th>Net Birim Fiyat</th><th>KDV Kesinti Oranı</th><th>Evrak Tutar</th><th>Evrak İskonto</th><th>Evrak KDV</th><th>Evrak Toplam</th><th>Sil</th>
+</tr></thead>
+<tbody id="tabloBody"></tbody>
+</table>
+<div style="margin-top:15px;font-weight:bold">Evrak Toplam: <span id="genelToplam">0,00</span> <span id="paraBirimiGoster">TL</span></div>
+<button onclick="window.print()" style="background:#4caf50;margin-top:10px">Yazdır / PDF Al</button>
 </div>
 
 <script>
-fetch('https://ahmetdogan68.github.io/hesap/fiyat.json')
+let fiyatlar=[];
+
+fetch('https://raw.githubusercontent.com/ahmetdogan68/hesap/refs/heads/main/fiyat.json')
 .then(r=>r.json())
 .then(data=>{
+  fiyatlar=data;
   let sel=document.getElementById('urunSelect');
   sel.innerHTML='';
-  data.forEach((p,i)=>{let o=document.createElement('option');o.value=i;o.textContent=p.urun;sel.appendChild(o);});
+  data.forEach((p,i)=>{
+    let o=document.createElement('option');
+    o.value=i;
+    o.textContent=p.urun;
+    sel.appendChild(o);
+  });
 })
-.catch(()=>{document.getElementById('urunSelect').innerHTML='<option>fiyat.json bulunamadı</option>'});
+.catch(e=>{
+  document.getElementById('urunSelect').innerHTML='<option>Fiyat.json yüklenemedi</option>';
+  console.error(e);
+});
 
-function hesapla(){
-  let idx=document.getElementById('urunSelect').value;
-  // fiyatları tekrar çekmek yerine basit hesap
-  document.getElementById('sonuc').textContent='Ürün seçildi: '+document.getElementById('urunSelect').options[document.getElementById('urunSelect').selectedIndex].text;
+function saveSettings(){
+ let a={unvan:document.getElementById('firmaUnvan').value,adres:document.getElementById('adres').value,tel:document.getElementById('telefon').value,mail:document.getElementById('mail').value,web:document.getElementById('web').value,banka:document.getElementById('banka').value,doviz:document.getElementById('doviz').value};
+ localStorage.setItem('ayarlar',JSON.stringify(a));
+ firmaGoster(); alert('Kaydedildi'); document.getElementById('ayarModal').style.display='none';
+}
+function firmaGoster(){
+ let a=JSON.parse(localStorage.getItem('ayarlar')||'{}');
+ document.getElementById('firmaBaslik').textContent=a.unvan||'FİYAT TEKLİFİ';
+ document.getElementById('firmaBilgi').innerHTML=`${a.adres||''}<br>Tel: ${a.tel||''} | ${a.mail||''} | ${a.web||''}<br>Banka: ${a.banka||''}`;
+}
+firmaGoster();
+
+document.getElementById('logoInput').addEventListener('change',e=>{
+ const f=e.target.files[0]; if(!f)return;
+ const r=new FileReader(); r.onload=ev=>{
+  document.getElementById('logoPreview').src=ev.target.result;
+  document.getElementById('logoPreview').style.display='block';
+  document.getElementById('logoTop').src=ev.target.result;
+  document.getElementById('logoTop').style.display='block';
+ }; r.readAsDataURL(f);
+});
+
+function tabloyaEkle(){
+ if(!fiyatlar.length) return alert('Fiyatlar yüklenmedi');
+ let idx=document.getElementById('urunSelect').value;
+ let urun=fiyatlar[idx];
+ let marka=document.getElementById('markaSelect').value;
+ let para=document.getElementById('paraSelect').value;
+ let tip=document.getElementById('tipSelect').value;
+ let miktar=parseFloat(document.getElementById('miktar').value)||1;
+ let isk=parseFloat(document.getElementById('iskonto').value)||0;
+ let kdv=parseFloat(document.getElementById('kdv').value)||20;
+ let birimFiyat=para==='TL'?urun.fiyatTL:urun.fiyatUSD;
+ let toplamMetre=tip==='adet'?miktar*6:miktar;
+ let tutar=birimFiyat*toplamMetre;
+ let iskontolu=tutar*(1-isk/100);
+ let kdvT=iskontolu*(kdv/100);
+ let toplam=iskontolu+kdvT;
+
+ let tr=document.createElement('tr');
+ tr.innerHTML=`<td>${urun.urun} ${marka}</td><td>${miktar}</td><td>${tip==='adet'?'Adet':'Metre'}</td><td>${toplamMetre}</td><td>Metre</td><td>${marka} 2025</td><td>KUL</td><td>${isk.toFixed(2)}</td><td>${birimFiyat.toFixed(2)} ${para}</td><td>${kdv.toFixed(2)}</td><td>${tutar.toFixed(2)}</td><td>${(tutar-iskontolu).toFixed(2)}</td><td>${kdvT.toFixed(2)}</td><td data-toplam="${toplam}">${toplam.toFixed(2)}</td><td><button onclick="this.parentElement.parentElement.remove();toplamHesapla()" style="background:#f44336;padding:4px 8px">X</button></td>`;
+ document.getElementById('tabloBody').appendChild(tr);
+ document.getElementById('paraBirimiGoster').textContent=para;
+ toplamHesapla();
+}
+function toplamHesapla(){
+ let sum=0;
+ document.querySelectorAll('[data-toplam]').forEach(el=> sum+=parseFloat(el.dataset.toplam));
+ document.getElementById('genelToplam').textContent=sum.toFixed(2).replace('.',',');
 }
 </script>
 </body>
