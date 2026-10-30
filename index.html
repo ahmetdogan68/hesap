@@ -68,7 +68,7 @@ td{padding:4px;border:1px solid #ccc;white-space:nowrap}
 <div class="card">
 <h3 style="margin:0 0 8px">Ürün Ekle</h3>
 <div class="urun-row" id="formRow">
-<div class="w-big"><label>Ürün Seç</label><select id="urunSelect"></select></div>
+<div class="w-big"><label>Ürün Seç</label><select id="urunSelect"><option>Yükleniyor...</option></select></div>
 <div class="w-small"><label>Marka</label><select id="markaSelect"><option value="YÜCEL">YÜCEL</option><option value="TOSÇELİK">TOSÇELİK</option></select></div>
 <div class="w-small"><label>Para Birimi</label><select id="paraSelect"><option value="TL" selected>TL</option><option value="USD">$</option></select></div>
 <div class="w-small"><label>Evrak Birim</label><select id="tipSelect"><option value="adet">Adet</option><option value="metre">Metre</option></select></div>
@@ -80,10 +80,10 @@ td{padding:4px;border:1px solid #ccc;white-space:nowrap}
 
 <div class="hesap-kutu">
 <div>Metre Karşılığı<br><b id="hMetre">6 m</b></div>
-<div>Birim Fiyat<br><b id="hBirim">-</b></div>
+<div>Liste Fiyat<br><b id="hBirim">-</b></div>
 <div>İskonto<br><b id="hIskonto">%0</b></div>
 <div>İskontolu Fiyat<br><b id="hIskontolu">-</b></div>
-<div>Toplam (KDV Dahil)<br><b id="hToplam">-</b></div>
+<div>Toplam<br><b id="hToplam">-</b></div>
 </div>
 </div>
 
@@ -91,41 +91,41 @@ td{padding:4px;border:1px solid #ccc;white-space:nowrap}
 <h3 style="margin:0 0 6px">Evrak Kalemleri</h3>
 <table>
 <thead><tr>
-<th>Mal Adı</th><th>Fiyat Şablon No</th><th>Fiyat Doviz</th><th>Evrak Miktar</th><th>Evrak Birim</th><th>Miktar</th><th>Birim</th><th>Fiyat</th><th>Kalem İskonto Oran 1</th><th>Net Birim Fiyat</th><th>KDV Oranı</th><th>Evrak Tutar</th><th>Evrak KDV</th><th>Evrak Toplam</th><th>Sil</th>
+<th>Ürün</th><th>Marka</th><th>Para Birimi</th><th>Evrak Miktar</th><th>Evrak Birim</th><th>Miktar</th><th>Birim</th><th>Liste Fiyat</th><th>İskonto</th><th>İskontolu Fiyat</th><th>Toplam</th><th>KDV</th><th>Genel Toplam</th><th>Sil</th>
 </tr></thead>
 <tbody id="tabloBody"></tbody>
 </table>
-<div style="margin-top:10px;font-weight:bold">Evrak Toplam: <span id="genelToplam">0,00</span> <span id="paraBirimiGoster">TL</span></div>
+<div style="margin-top:10px;font-weight:bold">Genel Toplam: <span id="genelToplam">0,00</span> <span id="paraBirimiGoster">TL</span></div>
 <button onclick="window.print()" style="background:#4caf50;margin-top:8px">Yazdır / PDF Al</button>
 </div>
 
 <script>
-// GÖMÜLÜ LİSTE - İnternet gerekmez
-let fiyatlar = [
-  { "urun": "15x15x1,20 HR KARE PROFİL", "fiyatTL": 38.87, "fiyatUSD": 0.83 },
-  { "urun": "15x15x1,50 HR KARE PROFİL", "fiyatTL": 46.75, "fiyatUSD": 1.0 },
-  { "urun": "16x16x1,50 HR KARE PROFİL", "fiyatTL": 53.65, "fiyatUSD": 1.15 },
-  { "urun": "15x30x1,50 HR KARE PROFİL", "fiyatTL": 67.15, "fiyatUSD": 1.43 },
-  { "urun": "25x25x1,20 HR KARE PROFİL", "fiyatTL": 60.91, "fiyatUSD": 1.3 },
-  { "urun": "25x25x1,40 HR KARE PROFİL", "fiyatTL": 64.71, "fiyatUSD": 1.38 },
-  { "urun": "25x25x1,50 HR KARE PROFİL", "fiyatTL": 67.39, "fiyatUSD": 1.44 },
-  { "urun": "25x25x1,90 HR KARE PROFİL", "fiyatTL": 79.54, "fiyatUSD": 1.7 },
-  { "urun": "25x25x2,50 HR KARE PROFİL", "fiyatTL": 102.36, "fiyatUSD": 2.18 },
-  { "urun": "25x25x3,00 HR KARE PROFİL", "fiyatTL": 121.07, "fiyatUSD": 2.58 },
-  { "urun": "40x60x2.00 mm DİKDÖRTGEN PROFİL", "fiyatTL": 164.18, "fiyatUSD": 3.50 }
-];
+let fiyatlar = [];
 
-let sel=document.getElementById('urunSelect');
-sel.innerHTML='';
-fiyatlar.forEach((p,i)=>{
-  let o=document.createElement('option');
-  o.value=i;
-  o.textContent=p.urun;
-  sel.appendChild(o);
-});
+async function fiyatlariYukle(){
+  try{
+    const res = await fetch('fiyat.json');
+    if(!res.ok) throw new Error('fiyat.json bulunamadi');
+    fiyatlar = await res.json();
+  }catch(e){
+    alert('fiyat.json yüklenemedi: ' + e.message + '\n\nDosyayı index.html ile aynı klasöre koy.');
+    return;
+  }
+  let sel=document.getElementById('urunSelect');
+  sel.innerHTML='';
+  fiyatlar.forEach((p,i)=>{
+    let o=document.createElement('option');
+    o.value=i;
+    o.textContent=p.urun;
+    sel.appendChild(o);
+  });
+  canliGuncelle();
+}
+fiyatlariYukle();
 
 function canliGuncelle(){
-  let idx=sel.value;
+  if(!fiyatlar.length) return;
+  let idx=document.getElementById('urunSelect').value;
   let urun=fiyatlar[idx];
   let para=document.getElementById('paraSelect').value;
   let tip=document.getElementById('tipSelect').value;
@@ -145,7 +145,6 @@ function canliGuncelle(){
 }
 document.getElementById('formRow').addEventListener('input', canliGuncelle);
 document.getElementById('formRow').addEventListener('change', canliGuncelle);
-canliGuncelle();
 
 document.getElementById('formRow').addEventListener('keydown', e=>{
   if(e.key === 'Enter'){
@@ -196,6 +195,7 @@ document.getElementById('logoInput').addEventListener('change',e=>{
 });
 
 function tabloyaEkle(){
+ if(!fiyatlar.length) return alert('Ürünler yüklenmedi');
  let idx=document.getElementById('urunSelect').value;
  let urun=fiyatlar[idx];
  let marka=document.getElementById('markaSelect').value;
@@ -210,10 +210,9 @@ function tabloyaEkle(){
  let iskontolu=tutar*(1-isk/100);
  let kdvT=iskontolu*(kdv/100);
  let toplam=iskontolu+kdvT;
- let netBirim=birimFiyat*(1-isk/100);
 
  let tr=document.createElement('tr');
- tr.innerHTML=`<td>${urun.urun}</td><td>${marka} 2025</td><td>${para}</td><td>${miktar}</td><td>${tip==='adet'?'Adet':'Metre'}</td><td>${toplamMetre}</td><td>Metre</td><td>${birimFiyat.toFixed(2)}</td><td>${isk.toFixed(2)}</td><td>${netBirim.toFixed(2)}</td><td>${kdv.toFixed(2)}</td><td>${tutar.toFixed(2)}</td><td>${kdvT.toFixed(2)}</td><td data-toplam="${toplam}">${toplam.toFixed(2)}</td><td><button onclick="this.parentElement.parentElement.remove();toplamHesapla()" style="background:#f44336;padding:4px 8px">X</button></td>`;
+ tr.innerHTML=`<td>${urun.urun}</td><td>${marka}</td><td>${para}</td><td>${miktar}</td><td>${tip==='adet'?'Adet':'Metre'}</td><td>${toplamMetre}</td><td>Metre</td><td>${birimFiyat.toFixed(2)}</td><td>%${isk.toFixed(2)}</td><td>${iskontolu.toFixed(2)}</td><td>${iskontolu.toFixed(2)}</td><td>%${kdv.toFixed(2)}</td><td data-toplam="${toplam}">${toplam.toFixed(2)}</td><td><button onclick="this.parentElement.parentElement.remove();toplamHesapla()" style="background:#f44336;padding:4px 8px">X</button></td>`;
  document.getElementById('tabloBody').appendChild(tr);
  document.getElementById('paraBirimiGoster').textContent=para;
  toplamHesapla();
