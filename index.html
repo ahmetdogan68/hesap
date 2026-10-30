@@ -2,227 +2,170 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fiyat Teklif</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UYAP e-SATIŞ PROFİL</title>
 <style>
-body{font-family:Arial,sans-serif;margin:0;background:#f5f5f5;padding:12px}
-.card{background:#fff;padding:12px;border-radius:8px;margin-bottom:12px;box-shadow:0 2px 5px rgba(0,0,0,.1)}
-label{font-weight:bold;font-size:11px;display:block;margin-bottom:3px}
-input,select{padding:7px;border:1px solid #ccc;border-radius:5px;width:100%;box-sizing:border-box}
-button{padding:9px 12px;background:#1976d2;color:#fff;border:0;border-radius:5px;font-weight:bold;cursor:pointer}
-table{width:100%;border-collapse:collapse;font-size:11px;display:block;overflow-x:auto}
-th{background:#1976d2;color:#fff;padding:5px;border:1px solid #0d47a1;white-space:nowrap}
-td{padding:4px;border:1px solid #ccc;white-space:nowrap}
-#ayarIkon{position:fixed;top:12px;right:12px;background:#333;color:#fff;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;z-index:999}
-#ayarModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;justify-content:center;align-items:center}
-.modalBox{background:#fff;padding:15px;width:92%;max-width:600px;border-radius:10px;max-height:92vh;overflow-y:auto}
-.logo{max-height:45px}
-.urun-row{display:flex;gap:6px;align-items:end}
-.urun-row > div{flex:1}
-.urun-row .w-small{flex:0 0 105px}
-.urun-row .w-big{flex:3}
-.hesap-kutu{display:flex;gap:10px;background:#e3f2fd;padding:10px;border-radius:6px;margin-top:10px;flex-wrap:wrap}
-.hesap-kutu div{flex:1;min-width:100px;text-align:center}
-.hesap-kutu b{font-size:16px;color:#0d47a1}
+body{font-family:Arial,sans-serif; margin:20px; background:#f9f9f9;}
+.card{background:#fff; padding:15px; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,.1); margin-bottom:20px;}
+label{font-size:12px; font-weight:bold; display:block; margin-bottom:3px;}
+input,select{padding:7px; border:1px solid #ccc; border-radius:4px; width:100%; box-sizing:border-box;}
+button{padding:8px 16px; background:#1976d2; color:#fff; border:none; border-radius:4px; cursor:pointer;}
+table{width:100%; border-collapse:collapse; margin-top:15px;}
+th,td{border:1px solid #ddd; padding:8px; font-size:13px; text-align:left;}
+th{background:#f0f0f0;}
+#urunList{position:absolute; top:100%; left:0; right:0; background:#fff; border:1px solid #ddd; max-height:250px; overflow-y:auto; display:none; z-index:1000; box-shadow:0 4px 8px rgba(0,0,0,.15);}
+#urunList div{padding:8px; cursor:pointer;}
+#urunList div:hover{background:#e3f2fd;}
+.flex-row{display:flex; gap:8px; align-items:flex-end; flex-wrap:wrap;}
+.flex-row > div{flex:1; min-width:80px;}
 </style>
 </head>
 <body>
 
-<div id="ayarIkon" onclick="document.getElementById('ayarModal').style.display='flex'">⚙️</div>
+<h2>UYAP e-SATIŞ PROFİL</h2>
 
-<div id="ayarModal">
-<div class="modalBox">
-<h3 style="margin-top:0">Ayarlar</h3>
-<div style="display:flex;gap:8px">
-<div style="flex:1"><label>Firma Ünvanı</label><input id="firmaUnvan" value="YÜCEL"></div>
-<div style="flex:1"><label>Döviz Kuru</label><input id="doviz" value="47" step="0.01"></div>
-</div>
-<label>Adres</label><input id="adres">
-<div style="display:flex;gap:8px">
-<div style="flex:1"><label>Telefon</label><input id="telefon"></div>
-<div style="flex:1"><label>Mail</label><input id="mail"></div>
-<div style="flex:1"><label>Web</label><input id="web"></div>
-</div>
-<label>Banka Hesap</label><input id="banka">
-<label>Logo</label><input type="file" id="logoInput" accept="image/*">
-<img id="logoPreview" class="logo" style="display:none;margin-top:8px">
-<button onclick="saveSettings()" style="width:100%;margin-top:12px">Kaydet</button>
-<button onclick="document.getElementById('ayarModal').style.display='none'" style="width:100%;background:#888;margin-top:5px">Kapat</button>
-</div>
+<div class="card">
+  <h3>Ürün Ekle</h3>
+  <div class="flex-row">
+    <div style="flex:2.5; min-width:260px; position:relative;">
+      <label>Ürün Seç</label>
+      <input type="text" id="urunSearch" placeholder="Örn: 40x60 yazın..." autocomplete="off">
+      <div id="urunList"></div>
+    </div>
+    <div><label>Marka</label><select id="marka"><option>YÜCEL</option></select></div>
+    <div><label>Para Birimi</label><select id="paraBirimi"><option>TL</option><option>USD</option></select></div>
+    <div><label>Evrak</label><select id="evrak"><option>Adet</option><option>Kg</option><option>Boy</option></select></div>
+    <div><label>Miktar</label><input type="number" id="miktar" value="1"></div>
+    <div><label>Evrak Birim</label><select id="evrakBirim"><option>Adet</option><option>Kg</option><option>Boy</option></select></div>
+    <div><label>Miktar Birim</label><input type="number" id="miktarBirim" value="1"></div>
+    <div><label>O Fiyat</label><input type="text" id="oFiyat" readonly style="background:#f5f5f5;"></div>
+    <div><label>İskonto (%)</label><input type="number" id="iskonto" value="0"></div>
+    <div><label>İskontolu Fiyat</label><input type="text" id="iskontoluFiyat" readonly style="background:#e3f2fd;"></div>
+    <div><label>KDV (%)</label><input type="number" id="kdvOran" value="20"></div>
+    <div><label>KDV Tutar</label><input type="text" id="kdvTutar" readonly style="background:#f5f5f5;"></div>
+    <div><label>Genel Toplam</label><input type="text" id="genelToplam" readonly style="background:#e3f2fd; font-weight:bold;"></div>
+    <div style="flex:0 0 auto;"><button onclick="addToCart()">+ Ekle</button></div>
+  </div>
 </div>
 
 <div class="card">
-<img id="logoTop" class="logo" style="display:none">
-<div style="display:flex;justify-content:space-between;align-items:center">
-<h2 id="firmaBaslik" style="margin:0">FİYAT TEKLİFİ</h2>
-<div style="font-size:12px">TCMB USD: <b id="tcmbKur">Yükleniyor...</b> TL</div>
-</div>
-<p id="firmaBilgi" style="margin:6px 0;font-size:13px"></p>
-<hr style="margin:6px 0">
-<div style="display:flex;gap:8px">
-<div style="flex:1"><label>Müşteri Ünvanı</label><input id="musteriUnvan" placeholder="Müşteri adı"></div>
-<div style="flex:1"><label>İletişim Bilgileri</label><input id="musteriTel" placeholder="Telefon, Mail, Adres"></div>
-</div>
-</div>
-
-<div class="card">
-<h3 style="margin:0 0 8px">Ürün Ekle</h3>
-<div class="urun-row" id="formRow">
-<div class="w-big"><label>Ürün Seç</label><select id="urunSelect"><option>Yükleniyor...</option></select></div>
-<div class="w-small"><label>Marka</label><select id="markaSelect"><option value="YÜCEL">YÜCEL</option><option value="TOSÇELİK">TOSÇELİK</option></select></div>
-<div class="w-small"><label>Para Birimi</label><select id="paraSelect"><option value="TL" selected>TL</option><option value="USD">$</option></select></div>
-<div class="w-small"><label>Evrak Birim</label><select id="tipSelect"><option value="adet">Adet</option><option value="metre">Metre</option></select></div>
-<div class="w-small"><label>Miktar</label><input type="number" id="miktar" value="1"></div>
-<div class="w-small"><label>İskonto (%)</label><input type="number" id="iskonto" value="0"></div>
-<div class="w-small"><label>KDV (%)</label><input type="number" id="kdv" value="20"></div>
-<div style="flex:0 0 auto"><button onclick="tabloyaEkle()" id="ekleBtn">+ Ekle</button></div>
-</div>
-
-<div class="hesap-kutu">
-<div>Metre Karşılığı<br><b id="hMetre">6 m</b></div>
-<div>Liste Fiyat<br><b id="hBirim">-</b></div>
-<div>İskonto<br><b id="hIskonto">%0</b></div>
-<div>İskontolu Fiyat<br><b id="hIskontolu">-</b></div>
-<div>Toplam<br><b id="hToplam">-</b></div>
-</div>
-</div>
-
-<div class="card">
-<h3 style="margin:0 0 6px">Evrak Kalemleri</h3>
-<table>
-<thead><tr>
-<th>Ürün</th><th>Marka</th><th>Para Birimi</th><th>Evrak Miktar</th><th>Evrak Birim</th><th>Miktar</th><th>Birim</th><th>Liste Fiyat</th><th>İskonto</th><th>İskontolu Fiyat</th><th>Toplam</th><th>KDV</th><th>Genel Toplam</th><th>Sil</th>
-</tr></thead>
-<tbody id="tabloBody"></tbody>
-</table>
-<div style="margin-top:10px;font-weight:bold">Genel Toplam: <span id="genelToplam">0,00</span> <span id="paraBirimiGoster">TL</span></div>
-<button onclick="window.print()" style="background:#4caf50;margin-top:8px">Yazdır / PDF Al</button>
+  <h3>Sepet</h3>
+  <table id="cartTable">
+    <thead><tr><th>Ürün</th><th>Miktar</th><th>İskonto</th><th>KDV</th><th>Tutar</th><th></th></tr></thead>
+    <tbody></tbody>
+  </table>
+  <div style="text-align:right; margin-top:15px;">
+    <div>Ara Toplam: <b id="araToplam">0 TL</b></div>
+    <div>KDV: <b id="toplamKdv">0 TL</b></div>
+    <div style="font-size:18px;">GENEL TOPLAM: <b id="genelToplamSepet">0 TL</b></div>
+  </div>
+  <button onclick="window.print()" style="margin-top:10px;">Yazdır</button>
 </div>
 
 <script>
-let fiyatlar = [];
+let urunler = [];
+let selectedUrun = null;
+let sepet = [];
 
-async function fiyatlariYukle(){
-  try{
-    const res = await fetch('fiyat.json');
-    if(!res.ok) throw new Error('fiyat.json bulunamadi');
-    fiyatlar = await res.json();
-  }catch(e){
-    alert('fiyat.json yüklenemedi: ' + e.message + '\n\nDosyayı index.html ile aynı klasöre koy.');
-    return;
-  }
-  let sel=document.getElementById('urunSelect');
-  sel.innerHTML='';
-  fiyatlar.forEach((p,i)=>{
-    let o=document.createElement('option');
-    o.value=i;
-    o.textContent=p.urun;
-    sel.appendChild(o);
+// fiyat.json yükle
+fetch('fiyat.json')
+.then(r=>r.json())
+.then(data=>{
+  urunler = data;
+  console.log('Ürün sayısı:', urunler.length);
+})
+.catch(e=>{
+  alert('fiyat.json yüklenemedi: '+e.message+'\nDosyayı index.html ile aynı klasöre koy.');
+});
+
+// Arama
+const searchInput = document.getElementById('urunSearch');
+const listBox = document.getElementById('urunList');
+
+searchInput.addEventListener('input', function(){
+  const q = this.value.toLocaleLowerCase('tr').trim();
+  listBox.innerHTML='';
+  if(q.length<2){ listBox.style.display='none'; return; }
+  const filtered = urunler.filter(u=>u.urun.toLocaleLowerCase('tr').includes(q));
+  if(filtered.length===0){ listBox.style.display='none'; return; }
+  filtered.slice(0,50).forEach(u=>{
+    const div=document.createElement('div');
+    div.textContent=u.urun;
+    div.onclick=()=>{
+      searchInput.value=u.urun;
+      selectedUrun=u;
+      listBox.style.display='none';
+      updateCalc();
+    };
+    listBox.appendChild(div);
   });
-  canliGuncelle();
-}
-fiyatlariYukle();
-
-function canliGuncelle(){
-  if(!fiyatlar.length) return;
-  let idx=document.getElementById('urunSelect').value;
-  let urun=fiyatlar[idx];
-  let para=document.getElementById('paraSelect').value;
-  let tip=document.getElementById('tipSelect').value;
-  let miktar=parseFloat(document.getElementById('miktar').value)||0;
-  let isk=parseFloat(document.getElementById('iskonto').value)||0;
-  let kdv=parseFloat(document.getElementById('kdv').value)||20;
-  let birimFiyat=para==='TL'?urun.fiyatTL:urun.fiyatUSD;
-  let toplamMetre=tip==='adet'?miktar*6:miktar;
-  let tutar=birimFiyat*toplamMetre;
-  let iskontolu=tutar*(1-isk/100);
-  let toplam=iskontolu*(1+kdv/100);
-  document.getElementById('hMetre').textContent=toplamMetre+' m';
-  document.getElementById('hBirim').textContent=birimFiyat.toFixed(2)+' '+para;
-  document.getElementById('hIskonto').textContent='%'+isk;
-  document.getElementById('hIskontolu').textContent=iskontolu.toFixed(2)+' '+para;
-  document.getElementById('hToplam').textContent=toplam.toFixed(2)+' '+para;
-}
-document.getElementById('formRow').addEventListener('input', canliGuncelle);
-document.getElementById('formRow').addEventListener('change', canliGuncelle);
-
-document.getElementById('formRow').addEventListener('keydown', e=>{
-  if(e.key === 'Enter'){
-    e.preventDefault();
-    const inputs = Array.from(document.querySelectorAll('#formRow select, #formRow input, #formRow button'));
-    const idx = inputs.indexOf(document.activeElement);
-    if(idx > -1 && idx < inputs.length - 1){
-      inputs[idx+1].focus();
-    } else if(document.activeElement.id === 'ekleBtn'){
-      tabloyaEkle();
-    }
-  }
+  listBox.style.display='block';
 });
 
-async function tcmbKurAl(){
-  try{
-    const res = await fetch('https://open.er-api.com/v6/latest/USD');
-    const data = await res.json();
-    const kur = data.rates.TRY;
-    document.getElementById('doviz').value = kur.toFixed(2);
-    document.getElementById('tcmbKur').textContent = kur.toFixed(2);
-  }catch(e){
-    document.getElementById('tcmbKur').textContent = 'Manuel';
-  }
-}
-tcmbKurAl();
-
-function saveSettings(){
- let a={unvan:document.getElementById('firmaUnvan').value,adres:document.getElementById('adres').value,tel:document.getElementById('telefon').value,mail:document.getElementById('mail').value,web:document.getElementById('web').value,banka:document.getElementById('banka').value,doviz:document.getElementById('doviz').value};
- localStorage.setItem('ayarlar',JSON.stringify(a));
- firmaGoster(); alert('Kaydedildi'); document.getElementById('ayarModal').style.display='none';
-}
-function firmaGoster(){
- let a=JSON.parse(localStorage.getItem('ayarlar')||'{}');
- document.getElementById('firmaBaslik').textContent=a.unvan||'FİYAT TEKLİFİ';
- document.getElementById('firmaBilgi').innerHTML=`${a.adres||''}<br>Tel: ${a.tel||''} | ${a.mail||''} | ${a.web||''}<br>Banka: ${a.banka||''}`;
-}
-firmaGoster();
-
-document.getElementById('logoInput').addEventListener('change',e=>{
- const f=e.target.files[0]; if(!f)return;
- const r=new FileReader(); r.onload=ev=>{
-  document.getElementById('logoPreview').src=ev.target.result;
-  document.getElementById('logoPreview').style.display='block';
-  document.getElementById('logoTop').src=ev.target.result;
-  document.getElementById('logoTop').style.display='block';
- }; r.readAsDataURL(f);
+document.addEventListener('click', e=>{
+  if(!searchInput.contains(e.target) && !listBox.contains(e.target))
+    listBox.style.display='none';
 });
 
-function tabloyaEkle(){
- if(!fiyatlar.length) return alert('Ürünler yüklenmedi');
- let idx=document.getElementById('urunSelect').value;
- let urun=fiyatlar[idx];
- let marka=document.getElementById('markaSelect').value;
- let para=document.getElementById('paraSelect').value;
- let tip=document.getElementById('tipSelect').value;
- let miktar=parseFloat(document.getElementById('miktar').value)||1;
- let isk=parseFloat(document.getElementById('iskonto').value)||0;
- let kdv=parseFloat(document.getElementById('kdv').value)||20;
- let birimFiyat=para==='TL'?urun.fiyatTL:urun.fiyatUSD;
- let toplamMetre=tip==='adet'?miktar*6:miktar;
- let tutar=birimFiyat*toplamMetre;
- let iskontolu=tutar*(1-isk/100);
- let kdvT=iskontolu*(kdv/100);
- let toplam=iskontolu+kdvT;
+// Hesap
+function fmt(n, para){
+  return n.toLocaleString('tr-TR',{minimumFractionDigits:2, maximumFractionDigits:2})+' '+para;
+}
+function updateCalc(){
+  if(!selectedUrun) return;
+  const para = document.getElementById('paraBirimi').value;
+  const miktar = parseFloat(document.getElementById('miktar').value)||0;
+  const miktarBirim = parseFloat(document.getElementById('miktarBirim').value)||1;
+  const iskonto = parseFloat(document.getElementById('iskonto').value)||0;
+  const kdv = parseFloat(document.getElementById('kdvOran').value)||0;
+  const birimFiyat = para==='TL' ? selectedUrun.fiyatTL : selectedUrun.fiyatUSD;
+  const oFiyat = birimFiyat * miktar * miktarBirim;
+  const iskontolu = oFiyat * (1 - iskonto/100);
+  const kdvTutar = iskontolu * (kdv/100);
+  const genel = iskontolu + kdvTutar;
+  document.getElementById('oFiyat').value = fmt(oFiyat, para);
+  document.getElementById('iskontoluFiyat').value = fmt(iskontolu, para);
+  document.getElementById('kdvTutar').value = fmt(kdvTutar, para);
+  document.getElementById('genelToplam').value = fmt(genel, para);
+}
+['miktar','miktarBirim','iskonto','kdvOran','paraBirimi'].forEach(id=>{
+  document.getElementById(id).addEventListener('input', updateCalc);
+});
 
- let tr=document.createElement('tr');
- tr.innerHTML=`<td>${urun.urun}</td><td>${marka}</td><td>${para}</td><td>${miktar}</td><td>${tip==='adet'?'Adet':'Metre'}</td><td>${toplamMetre}</td><td>Metre</td><td>${birimFiyat.toFixed(2)}</td><td>%${isk.toFixed(2)}</td><td>${iskontolu.toFixed(2)}</td><td>${iskontolu.toFixed(2)}</td><td>%${kdv.toFixed(2)}</td><td data-toplam="${toplam}">${toplam.toFixed(2)}</td><td><button onclick="this.parentElement.parentElement.remove();toplamHesapla()" style="background:#f44336;padding:4px 8px">X</button></td>`;
- document.getElementById('tabloBody').appendChild(tr);
- document.getElementById('paraBirimiGoster').textContent=para;
- toplamHesapla();
- document.getElementById('urunSelect').focus();
+// Sepete ekle
+function addToCart(){
+  if(!selectedUrun){ alert('Önce ürün seçin'); return; }
+  const para = document.getElementById('paraBirimi').value;
+  const miktar = parseFloat(document.getElementById('miktar').value)||0;
+  const miktarBirim = parseFloat(document.getElementById('miktarBirim').value)||1;
+  const iskonto = parseFloat(document.getElementById('iskonto').value)||0;
+  const kdv = parseFloat(document.getElementById('kdvOran').value)||0;
+  const birimFiyat = para==='TL' ? selectedUrun.fiyatTL : selectedUrun.fiyatUSD;
+  const oFiyat = birimFiyat * miktar * miktarBirim;
+  const iskontolu = oFiyat * (1 - iskonto/100);
+  const kdvTutar = iskontolu * (kdv/100);
+  const genel = iskontolu + kdvTutar;
+  sepet.push({urun:selectedUrun.urun, miktar, miktarBirim, para, iskontolu, kdvTutar, genel, kdv, iskonto});
+  renderSepet();
+  searchInput.value='';
+  selectedUrun=null;
+  ['oFiyat','iskontoluFiyat','kdvTutar','genelToplam'].forEach(id=>document.getElementById(id).value='');
 }
-function toplamHesapla(){
- let sum=0;
- document.querySelectorAll('[data-toplam]').forEach(el=> sum+=parseFloat(el.dataset.toplam));
- document.getElementById('genelToplam').textContent=sum.toFixed(2).replace('.',',');
+function renderSepet(){
+  const tbody=document.querySelector('#cartTable tbody');
+  tbody.innerHTML='';
+  let ara=0, kdvToplam=0, genelToplam=0;
+  sepet.forEach((item,i)=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${item.urun}</td><td>${item.miktar} x ${item.miktarBirim}</td><td>%${item.iskonto}</td><td>%${item.kdv}</td><td>${fmt(item.genel,item.para)}</td><td><button onclick="sil(${i})" style="background:#d32f2f; padding:4px 8px;">Sil</button></td>`;
+    tbody.appendChild(tr);
+    ara+=item.iskontolu; kdvToplam+=item.kdvTutar; genelToplam+=item.genel;
+  });
+  document.getElementById('araToplam').textContent=fmt(ara,'TL');
+  document.getElementById('toplamKdv').textContent=fmt(kdvToplam,'TL');
+  document.getElementById('genelToplamSepet').textContent=fmt(genelToplam,'TL');
 }
+function sil(i){ sepet.splice(i,1); renderSepet(); }
 </script>
 </body>
 </html>
