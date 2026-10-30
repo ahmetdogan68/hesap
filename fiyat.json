@@ -1,842 +1,142 @@
 [
-  {
-    "urun": "15x15x1,20 HR KARE PROFİL",
-    "fiyatTL": 38.87,
-    "fiyatUSD": 0.83,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "15x15x1,50 HR KARE PROFİL",
-    "fiyatTL": 46.75,
-    "fiyatUSD": 1.0,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "16x16x1,50 HR KARE PROFİL",
-    "fiyatTL": 53.65,
-    "fiyatUSD": 1.15,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "15x30x1,50 HR KARE PROFİL",
-    "fiyatTL": 67.15,
-    "fiyatUSD": 1.43,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "25x25x1,20 HR KARE PROFİL",
-    "fiyatTL": 60.91,
-    "fiyatUSD": 1.3,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "25x25x1,40 HR KARE PROFİL",
-    "fiyatTL": 64.71,
-    "fiyatUSD": 1.38,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "25x25x1,50 HR KARE PROFİL",
-    "fiyatTL": 67.39,
-    "fiyatUSD": 1.44,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "25x25x1,90 HR KARE PROFİL",
-    "fiyatTL": 79.54,
-    "fiyatUSD": 1.7,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "25x25x2,50 HR KARE PROFİL",
-    "fiyatTL": 102.36,
-    "fiyatUSD": 2.18,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "25x25x3,00 HR KARE PROFİL",
-    "fiyatTL": 121.07,
-    "fiyatUSD": 2.58,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "15x40x1,50 HR KARE PROFİL",
-    "fiyatTL": 83.74,
-    "fiyatUSD": 1.79,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "25x35x1,50 HR KARE PROFİL",
-    "fiyatTL": 90.33,
-    "fiyatUSD": 1.93,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "10x50x1,50 HR KARE PROFİL",
-    "fiyatTL": 91.21,
-    "fiyatUSD": 1.95,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x30x1,20 HR KARE PROFİL",
-    "fiyatTL": 72.39,
-    "fiyatUSD": 1.55,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x30x1,40 HR KARE PROFİL",
-    "fiyatTL": 77.5,
-    "fiyatUSD": 1.65,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x30x1,50 HR KARE PROFİL",
-    "fiyatTL": 80.34,
-    "fiyatUSD": 1.71,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x30x1,90 HR KARE PROFİL",
-    "fiyatTL": 95.87,
-    "fiyatUSD": 2.04,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x30x2,50 HR KARE PROFİL",
-    "fiyatTL": 120.21,
-    "fiyatUSD": 2.56,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x30x3,00 HR KARE PROFİL",
-    "fiyatTL": 144.1,
-    "fiyatUSD": 3.07,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x30x4,00 HR KARE PROFİL",
-    "fiyatTL": 207.82,
-    "fiyatUSD": 4.43,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "40x40x4,00 HR KARE PROFİL",
-    "fiyatTL": 251.36,
-    "fiyatUSD": 5.35,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "40x40x5,00 HR KARE PROFİL",
-    "fiyatTL": 315.9,
-    "fiyatUSD": 6.73,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "20x60x1,50 HR KARE PROFİL",
-    "fiyatTL": 121.91,
-    "fiyatUSD": 2.6,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x50x1,20 HR KARE PROFİL",
-    "fiyatTL": 128.4,
-    "fiyatUSD": 2.74,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x50x1,40 HR KARE PROFİL",
-    "fiyatTL": 131.22,
-    "fiyatUSD": 2.8,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x50x1,50 HR KARE PROFİL",
-    "fiyatTL": 135.53,
-    "fiyatUSD": 2.89,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x50x1,90 HR KARE PROFİL",
-    "fiyatTL": 159.83,
-    "fiyatUSD": 3.41,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x50x2,40 HR KARE PROFİL",
-    "fiyatTL": 191.98,
-    "fiyatUSD": 4.09,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x50x2,50 HR KARE PROFİL",
-    "fiyatTL": 197.25,
-    "fiyatUSD": 4.2,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x50x2,90 HR KARE PROFİL",
-    "fiyatTL": 229.91,
-    "fiyatUSD": 4.9,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x50x3,00 HR KARE PROFİL",
-    "fiyatTL": 235.34,
-    "fiyatUSD": 5.01,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x50x4,00 HR KARE PROFİL",
-    "fiyatTL": 314.49,
-    "fiyatUSD": 6.7,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x50x5,00 HR KARE PROFİL",
-    "fiyatTL": 389.45,
-    "fiyatUSD": 8.29,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x70x1,20 HR KARE PROFİL",
-    "fiyatTL": 131.25,
-    "fiyatUSD": 2.8,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x70x1,50 HR KARE PROFİL",
-    "fiyatTL": 142.08,
-    "fiyatUSD": 3.03,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x70x1,90 HR KARE PROFİL",
-    "fiyatTL": 171.39,
-    "fiyatUSD": 3.65,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x70x2,50 HR KARE PROFİL",
-    "fiyatTL": 211.44,
-    "fiyatUSD": 4.5,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x70x3,00 HR KARE PROFİL",
-    "fiyatTL": 248.54,
-    "fiyatUSD": 5.29,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x70x4,00 HR KARE PROFİL",
-    "fiyatTL": 329.43,
-    "fiyatUSD": 7.01,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "20x80x1,50 HR KARE PROFİL",
-    "fiyatTL": 154.07,
-    "fiyatUSD": 3.28,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "20x80x2,50 HR KARE PROFİL",
-    "fiyatTL": 222.16,
-    "fiyatUSD": 4.73,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "20x80x3,00 HR KARE PROFİL",
-    "fiyatTL": 282.85,
-    "fiyatUSD": 6.02,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x80x1,50 HR KARE PROFİL",
-    "fiyatTL": 175.21,
-    "fiyatUSD": 3.73,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x80x2,50 HR KARE PROFİL",
-    "fiyatTL": 253.74,
-    "fiyatUSD": 5.4,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x80x3,00 HR KARE PROFİL",
-    "fiyatTL": 302.16,
-    "fiyatUSD": 6.43,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x80x4,00 HR KARE PROFİL",
-    "fiyatTL": 395.58,
-    "fiyatUSD": 8.42,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x80x5,00 HR KARE PROFİL",
-    "fiyatTL": 491.96,
-    "fiyatUSD": 10.47,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "60x60x1,20 HR KARE PROFİL",
-    "fiyatTL": 155.79,
-    "fiyatUSD": 3.32,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "60x60x1,40 HR KARE PROFİL",
-    "fiyatTL": 163.45,
-    "fiyatUSD": 3.48,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "60x60x1,50 HR KARE PROFİL",
-    "fiyatTL": 169.29,
-    "fiyatUSD": 3.61,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "60x60x1,90 HR KARE PROFİL",
-    "fiyatTL": 194.84,
-    "fiyatUSD": 4.15,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "60x60x2,40 HR KARE PROFİL",
-    "fiyatTL": 233.96,
-    "fiyatUSD": 4.98,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "60x60x2,50 HR KARE PROFİL",
-    "fiyatTL": 240.72,
-    "fiyatUSD": 5.13,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "60x60x2,90 HR KARE PROFİL",
-    "fiyatTL": 281.34,
-    "fiyatUSD": 5.99,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "60x60x3,00 HR KARE PROFİL",
-    "fiyatTL": 287.29,
-    "fiyatUSD": 6.12,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "60x60x4,00 HR KARE PROFİL",
-    "fiyatTL": 385.75,
-    "fiyatUSD": 8.21,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "60x60x5,00 HR KARE PROFİL",
-    "fiyatTL": 484.8,
-    "fiyatUSD": 10.32,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x70x2,50 HR KARE PROFİL",
-    "fiyatTL": 254.09,
-    "fiyatUSD": 5.41,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x70x3,00 HR KARE PROFİL",
-    "fiyatTL": 302.86,
-    "fiyatUSD": 6.45,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x70x4,00 HR KARE PROFİL",
-    "fiyatTL": 405.2,
-    "fiyatUSD": 8.63,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x70x5,00 HR KARE PROFİL",
-    "fiyatTL": 506.18,
-    "fiyatUSD": 10.77,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x90x2,50 HR KARE PROFİL",
-    "fiyatTL": 275.41,
-    "fiyatUSD": 5.86,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x90x3,00 HR KARE PROFİL",
-    "fiyatTL": 320.69,
-    "fiyatUSD": 6.83,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x100x1,50 HR KARE PROFİL",
-    "fiyatTL": 202.47,
-    "fiyatUSD": 4.31,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x100x2,50 HR KARE PROFİL",
-    "fiyatTL": 305.18,
-    "fiyatUSD": 6.5,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x100x3,00 HR KARE PROFİL",
-    "fiyatTL": 355.15,
-    "fiyatUSD": 7.56,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x100x4,00 HR KARE PROFİL",
-    "fiyatTL": 460.3,
-    "fiyatUSD": 9.8,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x100x5,00 HR KARE PROFİL",
-    "fiyatTL": 570.51,
-    "fiyatUSD": 12.14,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "30x110x1,50 HR KARE PROFİL",
-    "fiyatTL": 226.07,
-    "fiyatUSD": 4.81,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x100x1,50 HR KARE PROFİL",
-    "fiyatTL": 245.45,
-    "fiyatUSD": 5.23,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x100x1,90 HR KARE PROFİL",
-    "fiyatTL": 255.45,
-    "fiyatUSD": 5.44,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x100x2,40 HR KARE PROFİL",
-    "fiyatTL": 299.47,
-    "fiyatUSD": 6.38,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x100x2,50 HR KARE PROFİL",
-    "fiyatTL": 307.01,
-    "fiyatUSD": 6.54,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x100x2,90 HR KARE PROFİL",
-    "fiyatTL": 357.56,
-    "fiyatUSD": 7.61,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x100x3,00 HR KARE PROFİL",
-    "fiyatTL": 365.37,
-    "fiyatUSD": 7.78,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x100x4,00 HR KARE PROFİL",
-    "fiyatTL": 476.64,
-    "fiyatUSD": 10.15,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x100x5,00 HR KARE PROFİL",
-    "fiyatTL": 596.39,
-    "fiyatUSD": 12.69,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x100x6,00 HR KARE PROFİL",
-    "fiyatTL": 755.0,
-    "fiyatUSD": 16.07,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "75x75x3,00 HR KARE PROFİL",
-    "fiyatTL": 385.92,
-    "fiyatUSD": 8.22,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "40x120x2,50 HR KARE PROFİL",
-    "fiyatTL": 344.57,
-    "fiyatUSD": 7.34,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x200x3,00 HR KARE PROFİL",
-    "fiyatTL": 769.94,
-    "fiyatUSD": 16.39,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x200x4,00 HR KARE PROFİL",
-    "fiyatTL": 996.94,
-    "fiyatUSD": 21.22,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x200x5,00 HR KARE PROFİL",
-    "fiyatTL": 1226.13,
-    "fiyatUSD": 26.1,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "50x200x6,00 HR KARE PROFİL",
-    "fiyatTL": 1506.06,
-    "fiyatUSD": 32.06,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "60x150x3,00 HR KARE PROFİL",
-    "fiyatTL": 696.06,
-    "fiyatUSD": 14.82,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "60x150x4,00 HR KARE PROFİL",
-    "fiyatTL": 903.68,
-    "fiyatUSD": 19.24,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "60x150x5,00 HR KARE PROFİL",
-    "fiyatTL": 1114.56,
-    "fiyatUSD": 23.73,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "60x200x3,00 HR KARE PROFİL",
-    "fiyatTL": 904.66,
-    "fiyatUSD": 19.26,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "60x200x4,00 HR KARE PROFİL",
-    "fiyatTL": 1178.9,
-    "fiyatUSD": 25.1,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "60x200x5,00 HR KARE PROFİL",
-    "fiyatTL": 1452.35,
-    "fiyatUSD": 30.92,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "60x200x6,00 HR KARE PROFİL",
-    "fiyatTL": 1791.06,
-    "fiyatUSD": 38.13,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "80x120x3,00 HR KARE PROFİL",
-    "fiyatTL": 733.34,
-    "fiyatUSD": 15.61,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "80x120x4,00 HR KARE PROFİL",
-    "fiyatTL": 957.34,
-    "fiyatUSD": 20.38,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "80x120x5,00 HR KARE PROFİL",
-    "fiyatTL": 1185.28,
-    "fiyatUSD": 25.23,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "80x150x3,00 HR KARE PROFİL",
-    "fiyatTL": 909.32,
-    "fiyatUSD": 19.36,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "80x150x4,00 HR KARE PROFİL",
-    "fiyatTL": 1186.99,
-    "fiyatUSD": 25.26,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "80x150x5,00 HR KARE PROFİL",
-    "fiyatTL": 1467.86,
-    "fiyatUSD": 31.24,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "80x200x3,00 HR KARE PROFİL",
-    "fiyatTL": 1186.44,
-    "fiyatUSD": 25.25,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "80x200x4,00 HR KARE PROFİL",
-    "fiyatTL": 1555.45,
-    "fiyatUSD": 33.11,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "80x200x5,00 HR KARE PROFİL",
-    "fiyatTL": 1926.3,
-    "fiyatUSD": 41.0,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "80x200x6,00 HR KARE PROFİL",
-    "fiyatTL": 2370.9,
-    "fiyatUSD": 50.47,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "100x100x3,00 HR KARE PROFİL",
-    "fiyatTL": 582.24,
-    "fiyatUSD": 12.39,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "100x100x4,00 HR KARE PROFİL",
-    "fiyatTL": 772.56,
-    "fiyatUSD": 16.45,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "100x100x5,00 HR KARE PROFİL",
-    "fiyatTL": 958.63,
-    "fiyatUSD": 20.41,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "100x100x6,00 HR KARE PROFİL",
-    "fiyatTL": 1153.98,
-    "fiyatUSD": 24.57,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "100x150x3,00 HR KARE PROFİL",
-    "fiyatTL": 859.68,
-    "fiyatUSD": 18.3,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "100x150x4,00 HR KARE PROFİL",
-    "fiyatTL": 1132.24,
-    "fiyatUSD": 24.1,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "100x150x5,00 HR KARE PROFİL",
-    "fiyatTL": 1399.84,
-    "fiyatUSD": 29.8,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "100x150x6,00 HR KARE PROFİL",
-    "fiyatTL": 1680.96,
-    "fiyatUSD": 35.78,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "100x200x3,00 HR KARE PROFİL",
-    "fiyatTL": 1130.66,
-    "fiyatUSD": 24.07,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "100x200x4,00 HR KARE PROFİL",
-    "fiyatTL": 1488.66,
-    "fiyatUSD": 31.69,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "100x200x5,00 HR KARE PROFİL",
-    "fiyatTL": 1841.24,
-    "fiyatUSD": 39.2,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "100x200x6,00 HR KARE PROFİL",
-    "fiyatTL": 2209.14,
-    "fiyatUSD": 47.02,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "120x120x4,00 HR KARE PROFİL",
-    "fiyatTL": 1095.78,
-    "fiyatUSD": 23.32,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "120x120x5,00 HR KARE PROFİL",
-    "fiyatTL": 1367.12,
-    "fiyatUSD": 29.1,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "120x120x6,00 HR KARE PROFİL",
-    "fiyatTL": 1645.74,
-    "fiyatUSD": 35.03,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "120x150x4,00 HR KARE PROFİL",
-    "fiyatTL": 1308.58,
-    "fiyatUSD": 27.86,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "120x150x5,00 HR KARE PROFİL",
-    "fiyatTL": 1628.16,
-    "fiyatUSD": 34.66,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "120x150x6,00 HR KARE PROFİL",
-    "fiyatTL": 1958.54,
-    "fiyatUSD": 41.69,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "120x200x4,00 HR KARE PROFİL",
-    "fiyatTL": 1716.26,
-    "fiyatUSD": 36.54,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "120x200x5,00 HR KARE PROFİL",
-    "fiyatTL": 2140.32,
-    "fiyatUSD": 45.56,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "120x200x6,00 HR KARE PROFİL",
-    "fiyatTL": 2572.8,
-    "fiyatUSD": 54.77,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "150x150x4,00 HR KARE PROFİL",
-    "fiyatTL": 1621.92,
-    "fiyatUSD": 34.53,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "150x150x5,00 HR KARE PROFİL",
-    "fiyatTL": 2013.22,
-    "fiyatUSD": 42.86,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "150x150x6,00 HR KARE PROFİL",
-    "fiyatTL": 2422.72,
-    "fiyatUSD": 51.58,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "150x200x4,00 HR KARE PROFİL",
-    "fiyatTL": 2122.26,
-    "fiyatUSD": 45.18,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "150x200x5,00 HR KARE PROFİL",
-    "fiyatTL": 2639.36,
-    "fiyatUSD": 56.19,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "150x200x6,00 HR KARE PROFİL",
-    "fiyatTL": 3171.84,
-    "fiyatUSD": 67.52,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "200x200x4,00 HR KARE PROFİL",
-    "fiyatTL": 2782.24,
-    "fiyatUSD": 59.23,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "200x200x5,00 HR KARE PROFİL",
-    "fiyatTL": 3470.28,
-    "fiyatUSD": 73.88,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "200x200x6,00 HR KARE PROFİL",
-    "fiyatTL": 4171.34,
-    "fiyatUSD": 88.8,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "120x200x8,00 HR KARE PROFİL",
-    "fiyatTL": 3404.24,
-    "fiyatUSD": 72.48,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "120x200x10,00 HR KARE PROFİL",
-    "fiyatTL": 4272.92,
-    "fiyatUSD": 90.97,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "150x200x8,00 HR KARE PROFİL",
-    "fiyatTL": 4251.04,
-    "fiyatUSD": 90.51,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "150x200x10,00 HR KARE PROFİL",
-    "fiyatTL": 5332.44,
-    "fiyatUSD": 113.53,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "200x200x8,00 HR KARE PROFİL",
-    "fiyatTL": 5568.14,
-    "fiyatUSD": 118.54,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "200x200x10,00 HR KARE PROFİL",
-    "fiyatTL": 6980.52,
-    "fiyatUSD": 148.63,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "150x200x12,00 HR KARE PROFİL",
-    "fiyatTL": 6349.2,
-    "fiyatUSD": 135.17,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "100x200x8,00 HR KARE PROFİL",
-    "fiyatTL": 2467.12,
-    "fiyatUSD": 52.52,
-    "kaynak": "YÜCEL FİYAT"
-  },
-  {
-    "urun": "100x200x10,00 HR KARE PROFİL",
-    "fiyatTL": 3092.66,
-    "fiyatUSD": 65.84,
-    "kaynak": "YÜCEL FİYAT"
-  }
+  { "urun": "15x15x1,20 HR KARE PROFİL", "fiyatTL": 38.87, "fiyatUSD": 0.83, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "15x15x1,50 HR KARE PROFİL", "fiyatTL": 46.75, "fiyatUSD": 1.0, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "16x16x1,50 HR KARE PROFİL", "fiyatTL": 53.65, "fiyatUSD": 1.15, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "15x30x1,50 HR KARE PROFİL", "fiyatTL": 67.15, "fiyatUSD": 1.43, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "25x25x1,20 HR KARE PROFİL", "fiyatTL": 60.91, "fiyatUSD": 1.3, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "25x25x1,40 HR KARE PROFİL", "fiyatTL": 64.71, "fiyatUSD": 1.38, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "25x25x1,50 HR KARE PROFİL", "fiyatTL": 67.39, "fiyatUSD": 1.44, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "25x25x1,90 HR KARE PROFİL", "fiyatTL": 79.54, "fiyatUSD": 1.7, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "25x25x2,50 HR KARE PROFİL", "fiyatTL": 102.36, "fiyatUSD": 2.18, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "25x25x3,00 HR KARE PROFİL", "fiyatTL": 121.07, "fiyatUSD": 2.58, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "15x40x1,50 HR KARE PROFİL", "fiyatTL": 83.74, "fiyatUSD": 1.79, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "25x35x1,50 HR KARE PROFİL", "fiyatTL": 90.33, "fiyatUSD": 1.93, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "10x50x1,50 HR KARE PROFİL", "fiyatTL": 91.21, "fiyatUSD": 1.95, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x30x1,20 HR KARE PROFİL", "fiyatTL": 72.39, "fiyatUSD": 1.55, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x30x1,40 HR KARE PROFİL", "fiyatTL": 77.5, "fiyatUSD": 1.65, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x30x1,50 HR KARE PROFİL", "fiyatTL": 80.34, "fiyatUSD": 1.71, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x30x1,90 HR KARE PROFİL", "fiyatTL": 95.87, "fiyatUSD": 2.04, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x30x2,50 HR KARE PROFİL", "fiyatTL": 120.21, "fiyatUSD": 2.56, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x30x3,00 HR KARE PROFİL", "fiyatTL": 144.1, "fiyatUSD": 3.07, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x30x4,00 HR KARE PROFİL", "fiyatTL": 207.82, "fiyatUSD": 4.43, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "40x40x4,00 HR KARE PROFİL", "fiyatTL": 251.36, "fiyatUSD": 5.35, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "40x40x5,00 HR KARE PROFİL", "fiyatTL": 315.9, "fiyatUSD": 6.73, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "20x60x1,50 HR KARE PROFİL", "fiyatTL": 121.91, "fiyatUSD": 2.6, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x50x1,20 HR KARE PROFİL", "fiyatTL": 128.4, "fiyatUSD": 2.74, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x50x1,40 HR KARE PROFİL", "fiyatTL": 131.22, "fiyatUSD": 2.8, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x50x1,50 HR KARE PROFİL", "fiyatTL": 135.53, "fiyatUSD": 2.89, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x50x1,90 HR KARE PROFİL", "fiyatTL": 159.83, "fiyatUSD": 3.41, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x50x2,40 HR KARE PROFİL", "fiyatTL": 191.98, "fiyatUSD": 4.09, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x50x2,50 HR KARE PROFİL", "fiyatTL": 197.25, "fiyatUSD": 4.2, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x50x2,90 HR KARE PROFİL", "fiyatTL": 229.91, "fiyatUSD": 4.9, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x50x3,00 HR KARE PROFİL", "fiyatTL": 235.34, "fiyatUSD": 5.01, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x50x4,00 HR KARE PROFİL", "fiyatTL": 314.49, "fiyatUSD": 6.7, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x50x5,00 HR KARE PROFİL", "fiyatTL": 389.45, "fiyatUSD": 8.29, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x70x1,20 HR KARE PROFİL", "fiyatTL": 131.25, "fiyatUSD": 2.8, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x70x1,50 HR KARE PROFİL", "fiyatTL": 142.08, "fiyatUSD": 3.03, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x70x1,90 HR KARE PROFİL", "fiyatTL": 171.39, "fiyatUSD": 3.65, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x70x2,50 HR KARE PROFİL", "fiyatTL": 211.44, "fiyatUSD": 4.5, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x70x3,00 HR KARE PROFİL", "fiyatTL": 248.54, "fiyatUSD": 5.29, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x70x4,00 HR KARE PROFİL", "fiyatTL": 329.43, "fiyatUSD": 7.01, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "20x80x1,50 HR KARE PROFİL", "fiyatTL": 154.07, "fiyatUSD": 3.28, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "20x80x2,50 HR KARE PROFİL", "fiyatTL": 222.16, "fiyatUSD": 4.73, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "20x80x3,00 HR KARE PROFİL", "fiyatTL": 282.85, "fiyatUSD": 6.02, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x80x1,50 HR KARE PROFİL", "fiyatTL": 175.21, "fiyatUSD": 3.73, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x80x2,50 HR KARE PROFİL", "fiyatTL": 253.74, "fiyatUSD": 5.4, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x80x3,00 HR KARE PROFİL", "fiyatTL": 302.16, "fiyatUSD": 6.43, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x80x4,00 HR KARE PROFİL", "fiyatTL": 395.58, "fiyatUSD": 8.42, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x80x5,00 HR KARE PROFİL", "fiyatTL": 491.96, "fiyatUSD": 10.47, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "60x60x1,20 HR KARE PROFİL", "fiyatTL": 155.79, "fiyatUSD": 3.32, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "60x60x1,40 HR KARE PROFİL", "fiyatTL": 163.45, "fiyatUSD": 3.48, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "60x60x1,50 HR KARE PROFİL", "fiyatTL": 169.29, "fiyatUSD": 3.61, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "60x60x1,90 HR KARE PROFİL", "fiyatTL": 194.84, "fiyatUSD": 4.15, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "60x60x2,40 HR KARE PROFİL", "fiyatTL": 233.96, "fiyatUSD": 4.98, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "60x60x2,50 HR KARE PROFİL", "fiyatTL": 240.72, "fiyatUSD": 5.13, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "60x60x2,90 HR KARE PROFİL", "fiyatTL": 281.34, "fiyatUSD": 5.99, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "60x60x3,00 HR KARE PROFİL", "fiyatTL": 287.29, "fiyatUSD": 6.12, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "60x60x4,00 HR KARE PROFİL", "fiyatTL": 385.75, "fiyatUSD": 8.21, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "60x60x5,00 HR KARE PROFİL", "fiyatTL": 484.8, "fiyatUSD": 10.32, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x70x2,50 HR KARE PROFİL", "fiyatTL": 254.09, "fiyatUSD": 5.41, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x70x3,00 HR KARE PROFİL", "fiyatTL": 302.86, "fiyatUSD": 6.45, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x70x4,00 HR KARE PROFİL", "fiyatTL": 405.2, "fiyatUSD": 8.63, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x70x5,00 HR KARE PROFİL", "fiyatTL": 506.18, "fiyatUSD": 10.77, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x90x2,50 HR KARE PROFİL", "fiyatTL": 275.41, "fiyatUSD": 5.86, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x90x3,00 HR KARE PROFİL", "fiyatTL": 320.69, "fiyatUSD": 6.83, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x100x1,50 HR KARE PROFİL", "fiyatTL": 202.47, "fiyatUSD": 4.31, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x100x2,50 HR KARE PROFİL", "fiyatTL": 305.18, "fiyatUSD": 6.5, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x100x3,00 HR KARE PROFİL", "fiyatTL": 355.15, "fiyatUSD": 7.56, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x100x4,00 HR KARE PROFİL", "fiyatTL": 460.3, "fiyatUSD": 9.8, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x100x5,00 HR KARE PROFİL", "fiyatTL": 570.51, "fiyatUSD": 12.14, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "30x110x1,50 HR KARE PROFİL", "fiyatTL": 226.07, "fiyatUSD": 4.81, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x100x1,50 HR KARE PROFİL", "fiyatTL": 245.45, "fiyatUSD": 5.23, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x100x1,90 HR KARE PROFİL", "fiyatTL": 255.45, "fiyatUSD": 5.44, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x100x2,40 HR KARE PROFİL", "fiyatTL": 299.47, "fiyatUSD": 6.38, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x100x2,50 HR KARE PROFİL", "fiyatTL": 307.01, "fiyatUSD": 6.54, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x100x2,90 HR KARE PROFİL", "fiyatTL": 357.56, "fiyatUSD": 7.61, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x100x3,00 HR KARE PROFİL", "fiyatTL": 365.37, "fiyatUSD": 7.78, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x100x4,00 HR KARE PROFİL", "fiyatTL": 476.64, "fiyatUSD": 10.15, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x100x5,00 HR KARE PROFİL", "fiyatTL": 596.39, "fiyatUSD": 12.69, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x100x6,00 HR KARE PROFİL", "fiyatTL": 755.0, "fiyatUSD": 16.07, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "75x75x3,00 HR KARE PROFİL", "fiyatTL": 385.92, "fiyatUSD": 8.22, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "40x120x2,50 HR KARE PROFİL", "fiyatTL": 344.57, "fiyatUSD": 7.34, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x200x3,00 HR KARE PROFİL", "fiyatTL": 769.94, "fiyatUSD": 16.39, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x200x4,00 HR KARE PROFİL", "fiyatTL": 996.94, "fiyatUSD": 21.22, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x200x5,00 HR KARE PROFİL", "fiyatTL": 1226.13, "fiyatUSD": 26.1, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "50x200x6,00 HR KARE PROFİL", "fiyatTL": 1506.06, "fiyatUSD": 32.06, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "60x150x3,00 HR KARE PROFİL", "fiyatTL": 696.06, "fiyatUSD": 14.82, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "60x150x4,00 HR KARE PROFİL", "fiyatTL": 903.68, "fiyatUSD": 19.24, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "60x150x5,00 HR KARE PROFİL", "fiyatTL": 1114.56, "fiyatUSD": 23.73, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "60x200x3,00 HR KARE PROFİL", "fiyatTL": 904.66, "fiyatUSD": 19.26, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "60x200x4,00 HR KARE PROFİL", "fiyatTL": 1178.9, "fiyatUSD": 25.1, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "60x200x5,00 HR KARE PROFİL", "fiyatTL": 1452.35, "fiyatUSD": 30.92, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "60x200x6,00 HR KARE PROFİL", "fiyatTL": 1791.06, "fiyatUSD": 38.13, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "80x120x3,00 HR KARE PROFİL", "fiyatTL": 733.34, "fiyatUSD": 15.61, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "80x120x4,00 HR KARE PROFİL", "fiyatTL": 957.34, "fiyatUSD": 20.38, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "80x120x5,00 HR KARE PROFİL", "fiyatTL": 1185.28, "fiyatUSD": 25.23, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "80x150x3,00 HR KARE PROFİL", "fiyatTL": 909.32, "fiyatUSD": 19.36, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "80x150x4,00 HR KARE PROFİL", "fiyatTL": 1186.99, "fiyatUSD": 25.26, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "80x150x5,00 HR KARE PROFİL", "fiyatTL": 1467.86, "fiyatUSD": 31.24, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "80x200x3,00 HR KARE PROFİL", "fiyatTL": 1186.44, "fiyatUSD": 25.25, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "80x200x4,00 HR KARE PROFİL", "fiyatTL": 1555.45, "fiyatUSD": 33.11, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "80x200x5,00 HR KARE PROFİL", "fiyatTL": 1926.3, "fiyatUSD": 41.0, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "80x200x6,00 HR KARE PROFİL", "fiyatTL": 2370.9, "fiyatUSD": 50.47, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "100x100x3,00 HR KARE PROFİL", "fiyatTL": 582.24, "fiyatUSD": 12.39, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "100x100x4,00 HR KARE PROFİL", "fiyatTL": 772.56, "fiyatUSD": 16.45, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "100x100x5,00 HR KARE PROFİL", "fiyatTL": 958.63, "fiyatUSD": 20.41, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "100x100x6,00 HR KARE PROFİL", "fiyatTL": 1153.98, "fiyatUSD": 24.57, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "100x150x3,00 HR KARE PROFİL", "fiyatTL": 859.68, "fiyatUSD": 18.3, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "100x150x4,00 HR KARE PROFİL", "fiyatTL": 1132.24, "fiyatUSD": 24.1, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "100x150x5,00 HR KARE PROFİL", "fiyatTL": 1399.84, "fiyatUSD": 29.8, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "100x150x6,00 HR KARE PROFİL", "fiyatTL": 1680.96, "fiyatUSD": 35.78, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "100x200x3,00 HR KARE PROFİL", "fiyatTL": 1130.66, "fiyatUSD": 24.07, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "100x200x4,00 HR KARE PROFİL", "fiyatTL": 1488.66, "fiyatUSD": 31.69, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "100x200x5,00 HR KARE PROFİL", "fiyatTL": 1841.24, "fiyatUSD": 39.2, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "100x200x6,00 HR KARE PROFİL", "fiyatTL": 2209.14, "fiyatUSD": 47.02, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "120x120x4,00 HR KARE PROFİL", "fiyatTL": 1095.78, "fiyatUSD": 23.32, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "120x120x5,00 HR KARE PROFİL", "fiyatTL": 1367.12, "fiyatUSD": 29.1, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "120x120x6,00 HR KARE PROFİL", "fiyatTL": 1645.74, "fiyatUSD": 35.03, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "120x150x4,00 HR KARE PROFİL", "fiyatTL": 1308.58, "fiyatUSD": 27.86, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "120x150x5,00 HR KARE PROFİL", "fiyatTL": 1628.16, "fiyatUSD": 34.66, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "120x150x6,00 HR KARE PROFİL", "fiyatTL": 1958.54, "fiyatUSD": 41.69, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "120x200x4,00 HR KARE PROFİL", "fiyatTL": 1716.26, "fiyatUSD": 36.54, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "120x200x5,00 HR KARE PROFİL", "fiyatTL": 2140.32, "fiyatUSD": 45.56, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "120x200x6,00 HR KARE PROFİL", "fiyatTL": 2572.8, "fiyatUSD": 54.77, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "150x150x4,00 HR KARE PROFİL", "fiyatTL": 1621.92, "fiyatUSD": 34.53, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "150x150x5,00 HR KARE PROFİL", "fiyatTL": 2013.22, "fiyatUSD": 42.86, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "150x150x6,00 HR KARE PROFİL", "fiyatTL": 2422.72, "fiyatUSD": 51.58, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "150x200x4,00 HR KARE PROFİL", "fiyatTL": 2122.26, "fiyatUSD": 45.18, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "150x200x5,00 HR KARE PROFİL", "fiyatTL": 2639.36, "fiyatUSD": 56.19, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "150x200x6,00 HR KARE PROFİL", "fiyatTL": 3171.84, "fiyatUSD": 67.52, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "200x200x4,00 HR KARE PROFİL", "fiyatTL": 2782.24, "fiyatUSD": 59.23, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "200x200x5,00 HR KARE PROFİL", "fiyatTL": 3470.28, "fiyatUSD": 73.88, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "200x200x6,00 HR KARE PROFİL", "fiyatTL": 4171.34, "fiyatUSD": 88.8, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "120x200x8,00 HR KARE PROFİL", "fiyatTL": 3404.24, "fiyatUSD": 72.48, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "120x200x10,00 HR KARE PROFİL", "fiyatTL": 4272.92, "fiyatUSD": 90.97, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "150x200x8,00 HR KARE PROFİL", "fiyatTL": 4251.04, "fiyatUSD": 90.51, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "150x200x10,00 HR KARE PROFİL", "fiyatTL": 5332.44, "fiyatUSD": 113.53, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "200x200x8,00 HR KARE PROFİL", "fiyatTL": 5568.14, "fiyatUSD": 118.54, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "200x200x10,00 HR KARE PROFİL", "fiyatTL": 6980.52, "fiyatUSD": 148.63, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "150x200x12,00 HR KARE PROFİL", "fiyatTL": 6349.2, "fiyatUSD": 135.17, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "100x200x8,00 HR KARE PROFİL", "fiyatTL": 2467.12, "fiyatUSD": 52.52, "kaynak": "YÜCEL FİYAT" },
+  { "urun": "100x200x10,00 HR KARE PROFİL", "fiyatTL": 3092.66, "fiyatUSD": 65.84, "kaynak": "YÜCEL FİYAT" }
 ]
