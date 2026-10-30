@@ -5,18 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fiyat Teklif</title>
 <style>
-body{font-family:Arial,sans-serif;margin:0;background:#f5f5f5;padding:15px}
-.card{background:#fff;padding:15px;border-radius:8px;margin-bottom:15px;box-shadow:0 2px 5px rgba(0,0,0,.1)}
-label{display:block;margin:8px 0 4px;font-weight:bold;font-size:13px}
-input,select{width:100%;padding:10px;border:1px solid #ccc;border-radius:5px;box-sizing:border-box}
-button{padding:10px 15px;background:#1976d2;color:#fff;border:0;border-radius:5px;font-weight:bold;cursor:pointer}
-table{width:100%;border-collapse:collapse;font-size:12px;display:block;overflow-x:auto}
-th{background:#b3d9ff;padding:6px;border:1px solid #999;white-space:nowrap}
-td{padding:5px;border:1px solid #ccc;white-space:nowrap}
-#ayarIkon{position:fixed;top:15px;right:15px;background:#333;color:#fff;width:45px;height:45px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;z-index:999}
+body{font-family:Arial,sans-serif;margin:0;background:#f5f5f5;padding:12px}
+.card{background:#fff;padding:12px;border-radius:8px;margin-bottom:12px;box-shadow:0 2px 5px rgba(0,0,0,.1)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+label{display:block;margin:6px 0 3px;font-weight:bold;font-size:12px}
+input,select{width:100%;padding:8px;border:1px solid #ccc;border-radius:5px;box-sizing:border-box}
+button{padding:9px 12px;background:#1976d2;color:#fff;border:0;border-radius:5px;font-weight:bold;cursor:pointer}
+table{width:100%;border-collapse:collapse;font-size:11px;display:block;overflow-x:auto}
+th{background:#b3d9ff;padding:5px;border:1px solid #999;white-space:nowrap}
+td{padding:4px;border:1px solid #ccc;white-space:nowrap}
+#ayarIkon{position:fixed;top:12px;right:12px;background:#333;color:#fff;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;z-index:999}
 #ayarModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;justify-content:center;align-items:center}
-.modalBox{background:#fff;padding:20px;width:90%;max-width:500px;border-radius:10px;max-height:90vh;overflow-y:auto}
-.logo{max-height:50px}
+.modalBox{background:#fff;padding:15px;width:92%;max-width:560px;border-radius:10px;max-height:92vh;overflow-y:auto}
+.logo{max-height:45px}
 </style>
 </head>
 <body>
@@ -25,64 +27,99 @@ td{padding:5px;border:1px solid #ccc;white-space:nowrap}
 
 <div id="ayarModal">
 <div class="modalBox">
-<h3>Ayarlar</h3>
-<label>Firma Ünvanı</label><input id="firmaUnvan" value="YÜCEL">
+<h3 style="margin-top:0">Ayarlar</h3>
+<div class="grid">
+<div><label>Firma Ünvanı</label><input id="firmaUnvan" value="YÜCEL"></div>
+<div><label>Döviz Kuru (TCMB)</label><input id="doviz" value="47" step="0.01"></div>
+</div>
 <label>Adres</label><input id="adres">
-<label>Telefon</label><input id="telefon">
-<label>Mail</label><input id="mail">
-<label>Web</label><input id="web">
-<label>Banka Hesap</label><input id="banka">
+<div class="grid">
+<div><label>Telefon</label><input id="telefon"></div>
+<div><label>Mail</label><input id="mail"></div>
+</div>
+<div class="grid">
+<div><label>Web</label><input id="web"></div>
+<div><label>Banka Hesap</label><input id="banka"></div>
+</div>
 <label>Logo</label><input type="file" id="logoInput" accept="image/*">
-<img id="logoPreview" class="logo" style="display:none;margin-top:10px">
-<label>Döviz Kuru</label><input type="number" id="doviz" value="47" step="0.01">
-<button onclick="saveSettings()" style="width:100%;margin-top:10px">Kaydet</button>
+<img id="logoPreview" class="logo" style="display:none;margin-top:8px">
+<button onclick="saveSettings()" style="width:100%;margin-top:12px">Kaydet</button>
 <button onclick="document.getElementById('ayarModal').style.display='none'" style="width:100%;background:#888;margin-top:5px">Kapat</button>
 </div>
 </div>
 
 <div class="card">
 <img id="logoTop" class="logo" style="display:none">
-<h2 id="firmaBaslik">FİYAT TEKLİFİ</h2>
-<p id="firmaBilgi"></p>
-<hr>
-<label>Müşteri Ünvanı</label><input id="musteriUnvan" placeholder="Müşteri adı">
-<label>İletişim Bilgileri</label><input id="musteriTel" placeholder="Telefon, Mail, Adres">
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+<h2 id="firmaBaslik" style="margin:0">FİYAT TEKLİFİ</h2>
+<div style="font-size:12px">TCMB USD: <b id="tcmbKur">Yükleniyor...</b> TL</div>
+</div>
+<p id="firmaBilgi" style="margin:6px 0;font-size:13px"></p>
+<hr style="margin:6px 0">
+<div class="grid">
+<div><label>Müşteri Ünvanı</label><input id="musteriUnvan" placeholder="Müşteri adı"></div>
+<div><label>İletişim Bilgileri</label><input id="musteriTel" placeholder="Telefon, Mail, Adres"></div>
+</div>
 </div>
 
 <div class="card">
-<h3>Ürün Ekle</h3>
-<label>Ürün Seç</label>
-<select id="urunSelect"><option>Yükleniyor...</option></select>
-
-<label>Marka</label>
-<select id="markaSelect"><option value="YÜCEL">YÜCEL</option><option value="TOSÇELİK">TOSÇELİK</option></select>
-
-<label>Para Birimi</label>
-<select id="paraSelect"><option value="TL" selected>TL</option><option value="USD">$</option></select>
-
-<label>Evrak Birim</label>
-<select id="tipSelect"><option value="adet">Adet</option><option value="metre">Metre</option></select>
-
-<label>Miktar</label><input type="number" id="miktar" value="1">
-<label>İskonto (%)</label><input type="number" id="iskonto" value="0">
-<label>KDV (%)</label><input type="number" id="kdv" value="20">
-<button onclick="tabloyaEkle()" style="width:100%;margin-top:10px">+ Tabloya Ekle</button>
+<h3 style="margin:0 0 6px">Ürün Ekle</h3>
+<div class="grid">
+<div><label>Ürün Seç</label><select id="urunSelect"><option>Yükleniyor...</option></select></div>
+<div><label>Marka</label><select id="markaSelect"><option value="YÜCEL">YÜCEL</option><option value="TOSÇELİK">TOSÇELİK</option></select></div>
+</div>
+<div class="grid3">
+<div><label>Para Birimi</label><select id="paraSelect"><option value="TL" selected>TL</option><option value="USD">$</option></select></div>
+<div><label>Evrak Birim</label><select id="tipSelect"><option value="adet">Adet</option><option value="metre">Metre</option></select></div>
+<div><label>Miktar</label><input type="number" id="miktar" value="1"></div>
+</div>
+<div class="grid">
+<div><label>İskonto (%)</label><input type="number" id="iskonto" value="0"></div>
+<div><label>KDV (%)</label><input type="number" id="kdv" value="20"></div>
+</div>
+<button onclick="tabloyaEkle()" style="width:100%;margin-top:8px">+ Tabloya Ekle</button>
 </div>
 
 <div class="card">
-<h3>Teklif Listesi</h3>
+<h3 style="margin:0 0 6px">Teklif Listesi</h3>
 <table>
 <thead><tr>
 <th>Mal Adı</th><th>Evrak Miktar</th><th>Evrak Birim</th><th>Miktar</th><th>Birim</th><th>Fiyat Şablonu</th><th>Liste Açıklaması</th><th>Kalem İskonto Oranı</th><th>Net Birim Fiyat</th><th>KDV Kesinti Oranı</th><th>Evrak Tutar</th><th>Evrak İskonto</th><th>Evrak KDV</th><th>Evrak Toplam</th><th>Sil</th>
 </tr></thead>
 <tbody id="tabloBody"></tbody>
 </table>
-<div style="margin-top:15px;font-weight:bold">Evrak Toplam: <span id="genelToplam">0,00</span> <span id="paraBirimiGoster">TL</span></div>
-<button onclick="window.print()" style="background:#4caf50;margin-top:10px">Yazdır / PDF Al</button>
+<div style="margin-top:10px;font-weight:bold">Evrak Toplam: <span id="genelToplam">0,00</span> <span id="paraBirimiGoster">TL</span></div>
+<button onclick="window.print()" style="background:#4caf50;margin-top:8px">Yazdır / PDF Al</button>
 </div>
 
 <script>
 let fiyatlar=[];
+
+// TCMB Kuru Çek
+async function tcmbKurAl(){
+  try{
+    const res = await fetch('https://www3.tcmb.gov.tr/yeni/bulten.xml');
+    const text = await res.text();
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(text, "text/xml");
+    const usd = xml.querySelector('Currency[Code="USD"]');
+    if(usd){
+      const kur = parseFloat(usd.querySelector('BanknoteBuying').textContent.replace(',','.'));
+      document.getElementById('doviz').value = kur.toFixed(2);
+      document.getElementById('tcmbKur').textContent = kur.toFixed(2);
+    }
+  }catch(e){
+    // TCMB CORS engellerse yedek
+    try{
+      const r2 = await fetch('https://api.exchangerate.host/convert?from=USD&to=TRY');
+      const j2 = await r2.json();
+      if(j2.result){ document.getElementById('doviz').value = j2.result; document.getElementById('tcmbKur').textContent = j2.result; }
+    }catch(e2){
+      document.getElementById('tcmbKur').textContent = 'Manuel';
+    }
+  }
+}
+tcmbKurAl();
 
 fetch('https://raw.githubusercontent.com/ahmetdogan68/hesap/refs/heads/main/fiyat.json')
 .then(r=>r.json())
