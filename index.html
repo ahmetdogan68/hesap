@@ -20,11 +20,34 @@ th{background:#f0f0f0;}
 .flex-row > div{flex:1; min-width:70px;}
 .para-small{flex:0 0 65px !important; min-width:65px !important;}
 .urun-big{flex:2.2 !important; min-width:200px !important;}
+.tabs{display:flex; gap:5px; margin-bottom:10px;}
+.tab-btn{padding:6px 12px; background:#eee; border:1px solid #ccc; border-radius:4px; cursor:pointer;}
+.tab-btn.active{background:#1976d2; color:#fff;}
 </style>
 </head>
 <body>
-<h3>Ürün Ekle</h3>
-<div class="card">
+<h3>UYAP e-SATIŞ PROFİL</h3>
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="showTab('urunTab',this)">Ürün Ekle</button>
+  <button class="tab-btn" onclick="showTab('ayarTab',this)">Ayarlar</button>
+</div>
+
+<!-- AYARLAR -->
+<div id="ayarTab" class="card" style="display:none;">
+  <h4>Ayarlar</h4>
+  <div class="flex-row">
+    <div><label>Varsayılan Marka</label><select id="setMarka"><option>YÜCEL</option></select></div>
+    <div><label>Varsayılan Para Birimi</label><select id="setPara"><option>TL</option><option>USD</option></select></div>
+    <div><label>Varsayılan KDV (%)</label><input type="number" id="setKdv" value="20"></div>
+    <div><label>Boy Uzunluğu (Metre)</label><input type="number" id="setBoy" value="6"></div>
+  </div>
+  <button onclick="applySettings()" style="margin-top:10px;">Ayarları Uygula</button>
+</div>
+
+<!-- ÜRÜN EKLE -->
+<div id="urunTab" class="card">
+  <h4>Ürün Ekle</h4>
   <div class="flex-row">
     <div class="urun-big" style="position:relative;">
       <label>Ürün Seç</label>
@@ -48,7 +71,7 @@ th{background:#f0f0f0;}
 </div>
 
 <div class="card">
-  <h3>Sepet</h3>
+  <h4>Sepet</h4>
   <table id="cartTable">
     <thead><tr><th>Ürün</th><th>Miktar</th><th>Metre</th><th>İskonto</th><th>KDV</th><th>Tutar</th><th></th></tr></thead>
     <tbody></tbody>
@@ -65,20 +88,28 @@ th{background:#f0f0f0;}
 let urunler = [];
 let selectedUrun = null;
 let sepet = [];
+let boyUzunlugu = 6;
 
 // fiyat.json'dan çek
 fetch('fiyat.json')
-.then(r=>{
-  if(!r.ok) throw new Error('fiyat.json bulunamadı');
-  return r.json();
-})
-.then(data=>{
-  urunler = data;
-  console.log('Ürün sayısı:', urunler.length);
-})
-.catch(e=>{
-  alert('fiyat.json yüklenemedi: '+e.message+'\nDosya index.html ile aynı klasörde olmalı.');
-});
+.then(r=>r.json())
+.then(data=>{ urunler = data; console.log('Ürün sayısı:', urunler.length); })
+.catch(e=>{ alert('fiyat.json yüklenemedi: '+e.message); });
+
+function showTab(id, btn){
+  document.getElementById('urunTab').style.display = id==='urunTab' ? 'block' : 'none';
+  document.getElementById('ayarTab').style.display = id==='ayarTab' ? 'block' : 'none';
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+function applySettings(){
+  document.getElementById('marka').value = document.getElementById('setMarka').value;
+  document.getElementById('paraBirimi').value = document.getElementById('setPara').value;
+  document.getElementById('kdvOran').value = document.getElementById('setKdv').value;
+  boyUzunlugu = parseFloat(document.getElementById('setBoy').value)||6;
+  updateCalc();
+  alert('Ayarlar uygulandı');
+}
 
 const searchInput = document.getElementById('urunSearch');
 const listBox = document.getElementById('urunList');
@@ -110,7 +141,7 @@ document.addEventListener('click', e=>{
 function fmt(n, para){ return n.toLocaleString('tr-TR',{minimumFractionDigits:2, maximumFractionDigits:2})+' '+para; }
 function updateCalc(){
   const miktar = parseFloat(document.getElementById('miktar').value)||0;
-  document.getElementById('miktarBirim').value = miktar * 6;
+  document.getElementById('miktarBirim').value = miktar * boyUzunlugu;
   document.getElementById('evrakBirim').value = 'Metre';
   if(!selectedUrun) return;
   const para = document.getElementById('paraBirimi').value;
